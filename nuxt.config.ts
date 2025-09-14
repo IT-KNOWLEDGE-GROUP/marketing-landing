@@ -11,7 +11,23 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false
+    }
+  ],
+
   css: ['~/assets/css/main.css'],
+
+  vite: {
+    css: {
+      devSourcemap: true
+    },
+    build: {
+      sourcemap: false
+    }
+  },
 
   mdc: {
     highlight: {
@@ -24,7 +40,8 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        '/'
+        '/',
+        '/landing/sant-cugat'
       ]
     }
   },

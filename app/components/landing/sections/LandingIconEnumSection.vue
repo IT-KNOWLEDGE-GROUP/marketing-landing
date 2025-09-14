@@ -1,0 +1,103 @@
+<script setup lang="ts">
+interface IconEnumItem {
+  icon: string
+  title: string
+  content: string
+}
+
+interface IconEnumButton {
+  label: string
+  to?: string
+  href?: string
+  icon?: string
+  color?: string
+  variant?: string
+  size?: string
+  target?: string
+}
+
+interface IconEnumSectionData {
+  title: string
+  subtitle?: string
+  description?: string
+  items: IconEnumItem[]
+  buttons?: IconEnumButton[]
+  background?: 'white' | 'gray' | 'dark' | 'gradient'
+}
+
+interface Props {
+  section: IconEnumSectionData
+  class?: string
+  ui?: object
+}
+
+const props = defineProps<Props>()
+
+// Usar el composable para procesar markdown inline
+const { parseInline } = useMarkdown()
+
+// Procesar contenido con markdown
+const processedTitle = computed(() => parseInline(props.section.title))
+const processedSubtitle = computed(() =>
+  props.section.subtitle ? parseInline(props.section.subtitle) : ''
+)
+const processedDescription = computed(() =>
+  props.section.description ? parseInline(props.section.description) : ''
+)
+
+// Configurar los botones
+const sectionLinks = computed(() => {
+  return props.section.buttons?.map(button => ({
+    label: button.label,
+    to: button.to,
+    href: button.href,
+    icon: button.icon,
+    color: button.color || 'primary',
+    variant: button.variant || 'solid',
+    size: button.size || 'md',
+    target: button.target
+  })) || []
+})
+
+// UI props
+const sectionUI = computed(() => props.ui || {})
+
+// Configurar timeline items para UTimeline
+const timelineItems = computed(() => {
+  return props.section.items.map(item => ({
+    icon: item.icon,
+    title: item.title,
+    description: item.content,
+    color: 'primary' // Verde Codelearn
+  }))
+})
+</script>
+
+<template>
+  <UPageSection
+    :links="sectionLinks"
+    :ui="sectionUI"
+    :class="class"
+  >
+    <template #title>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <!-- Contenido de texto (izquierda) -->
+        <div class="benefits-text-content">
+          <!-- Título principal -->
+          <h2 v-html="processedTitle" class="benefits-main-title" />
+
+          <!-- Subtítulo -->
+          <h3 v-if="section.subtitle" v-html="processedSubtitle" class="benefits-subtitle" />
+
+          <!-- Descripción adicional -->
+          <p v-if="section.description" v-html="processedDescription" class="benefits-description" />
+        </div>
+
+        <!-- Timeline de beneficios (derecha) -->
+        <div class="benefits-timeline-container">
+          <UTimeline :items="timelineItems" />
+        </div>
+      </div>
+    </template>
+  </UPageSection>
+</template>
