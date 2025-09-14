@@ -1,0 +1,1173 @@
+/* =================================================================== */
+/* CSS VARIABLES */
+/* =================================================================== */
+:root {
+  /* Colors */
+  --primary-green: #8BE63A;
+  --text-dark: #1f2937;
+  --text-gray: #4b5563;
+  --text-light-gray: #6b7280;
+  --text-extra-light: #9ca3af;
+  --hero-text-light: #d1d5db;
+
+  /* Typography */
+  --font-size-title: 2.5rem;
+  --font-size-subtitle: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+
+  /* Spacing */
+  --section-padding: 4rem 2rem;
+  --section-padding-sm: 3rem 2rem;
+  --section-padding-xs: 2rem 1rem;
+  --gap-lg: 4rem;
+  --gap-md: 2rem;
+  --gap-sm: 1.5rem;
+  --gap-xs: 1rem;
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --border-radius: 12px;
+  --border-radius-sm: 6px;
+}
+
+/* =================================================================== */
+/* BASE CLASSES */
+/* =================================================================== */
+
+/* UPageSection Override Base */
+:deep(.landing-section-base) {
+  padding: 0 !important;
+}
+
+:deep(.landing-section-base > *) {
+  padding: var(--section-padding) !important;
+}
+
+/* Section Layout Variants */
+:deep(.section-padding-sm > *) {
+  padding: var(--section-padding-sm) !important;
+}
+
+:deep(.section-padding-hero > *) {
+  padding: 5rem 2rem !important;
+}
+
+:deep(.section-no-padding > *) {
+  padding: 0 !important;
+}
+
+
+/* Typography Base Classes */
+.section-title {
+  font-size: var(--font-size-title);
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: var(--gap-sm);
+  line-height: var(--line-height-tight);
+}
+
+.section-description {
+  font-size: var(--font-size-subtitle);
+  font-weight: normal;
+  color: var(--text-gray);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--gap-md);
+}
+
+/* Horizontal Layout Base */
+:deep(.horizontal-layout) {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-lg);
+  align-items: center;
+}
+
+/* Image Container Base */
+:deep(.image-container-base) {
+  width: 100%;
+  padding: 0 0.5rem;
+}
+
+:deep(.image-container-base img) {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Text Content Base */
+:deep(.text-content-base) {
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+/* Bullets Base */
+:deep(.bullets-base) {
+  list-style: none;
+  padding: 0;
+  margin: var(--gap-md) 0;
+}
+
+:deep(.bullet-item-base) {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--gap-sm);
+  font-size: var(--font-size-body);
+  font-weight: normal;
+  color: var(--text-dark);
+  line-height: var(--line-height-normal);
+}
+
+/* =================================================================== */
+/* CONSOLIDATED SECTION STYLES */
+/* =================================================================== */
+
+/* Horizontal White Sections - Consolidates playing-learning, platform, personalized-learning, modalities, codelearn-presentation */
+:deep(.horizontal-white-section) {
+  padding: 0 !important;
+  background: white;
+}
+
+:deep(.horizontal-white-section > *) {
+  padding: 4rem 2rem !important;
+}
+
+:deep(.horizontal-white-section .grid) {
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem;
+  align-items: center;
+}
+
+:deep(.horizontal-white-section .horizontal-text-content) {
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+:deep(.horizontal-white-section .horizontal-headline) {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+:deep(.horizontal-white-section .horizontal-title) {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+:deep(.horizontal-white-section .horizontal-title strong) {
+  font-weight: 900;
+  color: #1f2937;
+  text-transform: uppercase;
+}
+
+:deep(.horizontal-white-section .horizontal-description) {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+:deep(.horizontal-white-section .horizontal-content) {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+:deep(.horizontal-white-section .horizontal-content strong),
+:deep(.horizontal-white-section .horizontal-description strong) {
+  font-weight: bold;
+  color: #1f2937;
+}
+
+:deep(.horizontal-white-section .horizontal-footer) {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 1.5rem 0;
+  line-height: 1.4;
+}
+
+:deep(.horizontal-white-section .horizontal-buttons) {
+  margin-top: 2rem;
+}
+
+:deep(.horizontal-white-section .horizontal-buttons .UButton) {
+  background-color: #8BE63A !important;
+  border-color: #8BE63A !important;
+  color: #1f2937 !important;
+  font-weight: bold !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 6px !important;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.025em !important;
+}
+
+:deep(.horizontal-white-section .horizontal-buttons .UButton:hover) {
+  background-color: #7bd730 !important;
+  border-color: #7bd730 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 230, 58, 0.3) !important;
+}
+
+:deep(.horizontal-white-section .horizontal-image-container) {
+  width: 100%;
+  padding: 0 0.5rem;
+}
+
+:deep(.horizontal-white-section .horizontal-image-container img) {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+@media (max-width: 1024px) {
+  :deep(.horizontal-white-section .grid) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  :deep(.horizontal-white-section .horizontal-title) {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  :deep(.horizontal-white-section .horizontal-text-content) {
+    text-align: center;
+  }
+
+  :deep(.horizontal-white-section .horizontal-image-container) {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  :deep(.horizontal-white-section .horizontal-title) {
+    font-size: 1.75rem;
+  }
+
+  :deep(.horizontal-white-section .horizontal-description),
+  :deep(.horizontal-white-section .horizontal-content) {
+    font-size: 1rem;
+  }
+
+  :deep(.horizontal-white-section .horizontal-buttons .UButton) {
+    padding: 0.625rem 1.5rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Dark Text Sections - Consolidates dark-cta and simple-text sections */
+:deep(.dark-text-section) {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: 0 !important;
+}
+
+:deep(.dark-text-section > *) {
+  padding: 4rem 2rem !important;
+}
+
+:deep(.dark-text-section h1) {
+  color: white !important;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  line-height: 1.2;
+}
+
+:deep(.dark-text-section h1 strong) {
+  color: #8BE63A !important;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+@media (max-width: 1024px) {
+  :deep(.dark-text-section h1) {
+    font-size: 2rem;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :deep(.dark-text-section h1) {
+    font-size: 1.75rem;
+    margin: 0 1rem;
+  }
+
+  :deep(.dark-text-section > *) {
+    padding: 2rem 1rem !important;
+  }
+}
+
+/* Overlay Sections - Base styles for sections with background image overlays */
+:deep(.overlay-section) {
+  position: relative;
+  padding: 0 !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+:deep(.overlay-section::before) {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+:deep(.overlay-section > *) {
+  padding: 5rem 2rem !important;
+  position: relative;
+  z-index: 2;
+}
+
+:deep(.overlay-section h1) {
+  color: white !important;
+  font-size: 1.625rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 auto 2rem auto;
+  max-width: 900px;
+  line-height: 1.4;
+}
+
+:deep(.overlay-section h1 strong) {
+  color: white !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+:deep(.overlay-section p) {
+  color: white !important;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+:deep(.overlay-section p strong) {
+  color: white !important;
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  :deep(.overlay-section h1) {
+    font-size: 1.5rem;
+    max-width: 90%;
+  }
+
+  :deep(.overlay-section p) {
+    font-size: 1.125rem;
+    max-width: 90%;
+  }
+
+  :deep(.overlay-section > *) {
+    padding: 4rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  :deep(.overlay-section h1) {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  :deep(.overlay-section p) {
+    font-size: 1rem;
+  }
+
+  :deep(.overlay-section > *) {
+    padding: 3rem 1rem !important;
+  }
+}
+
+/* =================================================================== */
+/* SECTION SPECIFIC STYLES */
+/* =================================================================== */
+
+/* Hero Section Styles */
+:deep(.hero-section) {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  text-align: center;
+  padding: 2rem 0 0 0 !important;
+}
+
+/* Override UPageSection internal padding */
+:deep(.hero-section > *) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Title and Description Container */
+:deep(.hero-section [data-slot="title"]) {
+  max-width: 900px;
+  color: white !important;
+  margin-bottom: 0 !important;
+}
+
+/* Hero Title */
+:deep(.hero-section h1) {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: white !important;
+  margin: 0rem 15rem 1.5rem 15rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  :deep(.hero-section h1) {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :deep(.hero-section h1) {
+    font-size: 2.5rem;
+  }
+}
+
+/* Hero Description */
+:deep(.hero-section p) {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #d1d5db !important;
+  line-height: 1.6;
+  margin: 0rem 17rem 2.5rem 17rem;
+}
+
+@media (min-width: 640px) {
+  :deep(.hero-section p) {
+    font-size: 1.125rem;
+  }
+}
+
+/* Image Container */
+:deep(.hero-image-container) {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 !important;
+}
+
+/* Remove spacing from default slot content */
+:deep(.hero-section [data-slot="default"]) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove any margin/padding from images */
+:deep(.hero-image-container img) {
+  padding: 0 !important;
+}
+
+/* Caption */
+:deep(.caption) {
+  margin-top: 1rem !important;
+  margin-bottom: 4rem !important;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #d1d5db;
+  white-space: nowrap;
+  max-width: none;
+}
+
+/* Horizontal Section Styles (now uses base classes) */
+:deep(.horizontal-section) {
+  background: white;
+}
+
+:deep(.horizontal-section > *) {
+  padding: 3.5rem 2rem !important;
+}
+
+/* Horizontal sections use the base layout */
+:deep(.horizontal-section .grid) {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Horizontal images inherit base styles */
+:deep(.horizontal-image-container) {
+  width: 100%;
+  padding: 0 0.5rem;
+}
+
+:deep(.horizontal-image-container img) {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Text content styling for horizontal sections */
+:deep(.horizontal-text-content) {
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+/* Title styling for horizontal sections */
+:deep(.horizontal-title) {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Content/description styling for horizontal sections */
+:deep(.horizontal-content) {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Bullets styling for horizontal sections */
+:deep(.horizontal-bullets) {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+:deep(.horizontal-bullet-item) {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #374151;
+  line-height: 1.5;
+}
+
+:deep(.horizontal-bullet-item::before) {
+  content: "✅";
+  margin-right: 0.75rem;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* Footer text styling for horizontal sections */
+:deep(.horizontal-footer) {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #4b5563;
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+/* Specific overrides for first horizontal section to prevent style conflicts */
+:deep(.horizontal-section .horizontal-title) {
+  font-size: 2.5rem !important;
+  font-weight: bold !important;
+  color: #1f2937 !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+}
+
+:deep(.horizontal-section .horizontal-content) {
+  font-size: 1.125rem !important;
+  font-weight: normal !important;
+  color: #4b5563 !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.6 !important;
+  text-align: left !important;
+}
+
+:deep(.horizontal-image-container img) {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Horizontal text content */
+:deep(.horizontal-text-content) {
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+/* Title styling - uses variables */
+:deep(.horizontal-title) {
+  font-size: var(--font-size-title);
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: var(--gap-sm);
+  line-height: var(--line-height-tight);
+}
+
+/* Content/description styling - uses variables */
+:deep(.horizontal-content),
+:deep(.horizontal-description) {
+  font-size: var(--font-size-subtitle);
+  font-weight: normal;
+  color: var(--text-gray);
+  margin-bottom: var(--gap-md);
+  line-height: var(--line-height-normal);
+}
+
+/* Common horizontal bullets styling */
+:deep(.horizontal-bullets) {
+  list-style: none;
+  padding: 0;
+  margin: var(--gap-md) 0;
+}
+
+:deep(.horizontal-bullet-item) {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--gap-sm);
+  font-size: var(--font-size-body);
+  font-weight: normal;
+  color: var(--text-dark);
+  line-height: var(--line-height-normal);
+}
+
+:deep(.horizontal-bullet-item::before) {
+  margin-right: 0.75rem;
+  font-size: var(--font-size-body);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* CTA Band Section Styles */
+:deep(.cta-band-section) {
+  position: relative;
+  padding: 0 !important;
+}
+
+/* Dark overlay for background image */
+:deep(.cta-band-section::before) {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Override UPageSection internal padding for CTA Band */
+:deep(.cta-band-section > *) {
+  padding: 4rem 2rem !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* CTA Band text styling */
+:deep(.cta-band-section h1) {
+  color: white !important;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 10rem 1.5rem 10rem;
+  line-height: 1.2;
+}
+
+:deep(.cta-band-section p) {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1.125rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 10rem 2.5rem 10rem;
+  line-height: 1.6;
+}
+
+/* Green CTA buttons for CTA Band Section */
+:deep(.cta-band-section .UButton) {
+  background-color: #8BE63A !important;
+  border-color: #8BE63A !important;
+  color: #1f2937 !important;
+  font-weight: bold !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 6px !important;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.025em !important;
+}
+
+:deep(.cta-band-section .UButton:hover) {
+  background-color: #7bd730 !important;
+  border-color: #7bd730 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 230, 58, 0.3) !important;
+}
+
+/* Benefits Section Styles */
+:deep(.benefits-section) {
+  padding: 0 !important;
+  background: white;
+}
+
+/* Override UPageSection internal padding for Benefits */
+:deep(.benefits-section > *) {
+  padding: 4rem 2rem !important;
+}
+
+/* Benefits text content (left column) */
+:deep(.benefits-text-content) {
+  padding-right: 2rem;
+  text-align: left;
+}
+
+:deep(.benefits-main-title) {
+  font-size: 2.5rem;
+  font-weight: bold !important;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+:deep(.benefits-subtitle) {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  text-align: left;
+}
+
+:deep(.benefits-description) {
+  font-size: 2.5rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Timeline container (right column) */
+:deep(.benefits-timeline-container) {
+  padding-left: 2rem;
+  text-align: left;
+}
+
+/* Customizar UTimeline para verde Codelearn */
+:deep(.benefits-section .UTimeline) {
+  --primary: #8BE63A;
+  --primary-50: #f0fdf0;
+  --primary-500: #8BE63A;
+  --primary-600: #7bd730;
+}
+
+/* Timeline item styling with more specific selectors */
+:deep(.benefits-section .relative .flex .rounded-full) {
+  background-color: transparent !important;
+  color: #8BE63A !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 5rem !important;
+  height: 5rem !important;
+  min-width: 5rem !important;
+  min-height: 5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Only target icons inside the timeline circle containers */
+:deep(.benefits-section .rounded-full .UIcon) {
+  color: #8BE63A !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+
+:deep(.benefits-section .rounded-full svg) {
+  color: #8BE63A !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+
+:deep(.benefits-section .rounded-full [class*="i-"]) {
+  color: #8BE63A !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+
+/* Timeline titles - more specific selectors */
+:deep(.benefits-section .font-semibold) {
+  font-weight: bold !important;
+  color: #000000 !important;
+  font-size: 1.125rem !important;
+  margin-bottom: 0.5rem !important;
+  text-align: left !important;
+}
+
+/* Target timeline item titles by position */
+:deep(.benefits-section li > div:nth-child(2) > div:first-child) {
+  font-weight: bold !important;
+  color: #000000 !important;
+  text-align: left !important;
+}
+
+/* Target specific UTimeline structure */
+:deep(.benefits-section .relative > div:not(.absolute) > div:first-child) {
+  font-weight: bold !important;
+  color: #000000 !important;
+  text-align: left !important;
+}
+
+/* More specific UTimeline title selector */
+:deep(.benefits-section .ml-4 > div:first-child) {
+  font-weight: bold !important;
+  color: #000000 !important;
+  text-align: left !important;
+}
+
+:deep(.benefits-section .text-gray-500) {
+  color: #000000 !important;
+  font-weight: normal !important;
+  line-height: 1.6 !important;
+  font-size: 1rem !important;
+  text-align: left !important;
+}
+
+:deep(.benefits-section .text-sm) {
+  color: #000000 !important;
+  font-weight: normal !important;
+  line-height: 1.6 !important;
+  font-size: 1rem !important;
+  text-align: left !important;
+}
+
+/* Timeline connector line */
+:deep(.benefits-section .border-primary) {
+  border-color: #8BE63A !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  :deep(.benefits-text-content) {
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  :deep(.benefits-timeline-container) {
+    padding-left: 0;
+  }
+
+  :deep(.benefits-main-title) {
+    font-size: 2rem;
+  }
+}
+
+/* Bullets styling */
+:deep(.horizontal-bullets) {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+:deep(.horizontal-bullet-item) {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #374151;
+  line-height: 1.5;
+}
+
+:deep(.horizontal-bullet-item::before) {
+  content: "✅";
+  margin-right: 0.75rem;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* Footer text styling */
+:deep(.horizontal-footer) {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  :deep(.horizontal-section .grid) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  :deep(.horizontal-title) {
+    font-size: 2rem;
+  }
+
+  :deep(.horizontal-image-container) {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  :deep(.horizontal-section) {
+    padding: 2rem 0;
+  }
+
+  :deep(.horizontal-text-content) {
+    padding: 0 1rem;
+  }
+
+  :deep(.horizontal-title) {
+    font-size: 1.75rem;
+  }
+
+  :deep(.horizontal-content) {
+    font-size: 1rem;
+  }
+}
+
+
+/* Contact Section Styles */
+:deep(.contact-section) {
+  background-color: #f3f4f6 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Override UPageSection internal padding for Contact */
+:deep(.contact-section > *) {
+  padding: 0 !important;
+}
+
+:deep(.contact-section .contact-section-container) {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+:deep(.contact-section .contact-header) {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+:deep(.contact-section .contact-title) {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #374151;
+  margin: 0;
+}
+
+:deep(.contact-section .contact-subtitle) {
+  font-size: 1.5rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+
+:deep(.contact-section .contact-form-container) {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+:deep(.contact-section .contact-form) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+:deep(.contact-section .form-input:nth-child(1)) {
+  grid-column: 1;
+}
+
+:deep(.contact-section .form-input:nth-child(2)) {
+  grid-column: 2;
+}
+
+:deep(.contact-section .form-input:nth-child(3)) {
+  grid-column: 1;
+}
+
+:deep(.contact-section .form-input:nth-child(4)) {
+  grid-column: 2;
+}
+
+:deep(.contact-section .form-textarea) {
+  grid-column: 1 / -1;
+}
+
+/* Estilizar inputs de Nuxt UI para que se vean limpios */
+:deep(.contact-section .form-input input),
+:deep(.contact-section .form-textarea textarea) {
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  background: white !important;
+  transition: border-color 0.2s ease !important;
+}
+
+:deep(.contact-section .form-input input:focus),
+:deep(.contact-section .form-textarea textarea:focus) {
+  border-color: #8BE63A !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(139, 230, 58, 0.1) !important;
+}
+
+:deep(.contact-section .form-input input::placeholder),
+:deep(.contact-section .form-textarea textarea::placeholder) {
+  color: #9ca3af !important;
+  font-weight: normal !important;
+}
+
+:deep(.contact-section .contact-submit-btn) {
+  grid-column: 1 / -1;
+  background-color: #8BE63A !important;
+  border-color: #8BE63A !important;
+  color: #000 !important;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 16px !important;
+  font-size: 16px !important;
+  border-radius: 6px !important;
+}
+
+
+
+@media (max-width: 768px) {
+  :deep(.contact-section) {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  :deep(.contact-section .contact-section-container) {
+    padding: 1.5rem 1rem;
+  }
+
+  :deep(.contact-section .contact-title) {
+    font-size: 2rem;
+  }
+
+  :deep(.contact-section .contact-subtitle) {
+    font-size: 1.25rem;
+  }
+
+
+  :deep(.contact-section .contact-form) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================================================================== */
+/* CONSOLIDATED MEDIA QUERIES */
+/* =================================================================== */
+
+/* Mobile: Make horizontal images flatter */
+@media (max-width: 768px) {
+  :deep(.horizontal-image-container img) {
+    height: 400px !important;
+    object-fit: cover !important;
+  }
+
+  /* Horizontal sections mobile adjustments */
+  :deep(.horizontal-section .grid),
+  :deep(.codelearn-presentation-section .grid),
+  :deep(.playing-learning-section .grid),
+  :deep(.platform-section .grid),
+  :deep(.personalized-learning-section .grid),
+  :deep(.modalities-section .grid) {
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+  }
+
+  /* Image containers mobile order */
+  :deep(.horizontal-image-container) {
+    order: -1;
+  }
+
+  /* Text content mobile adjustments */
+  :deep(.horizontal-text-content) {
+    text-align: center;
+    padding: 0;
+  }
+
+  /* Hero title mobile */
+  :deep(.hero-section h1) {
+    font-size: 1.75rem;
+    margin: 0 1rem 1.5rem 1rem;
+  }
+
+  /* Hero description mobile */
+  :deep(.hero-section p) {
+    font-size: 1rem;
+    margin: 0 1rem 2.5rem 1rem;
+  }
+
+  /* Common title sizing mobile */
+  :deep(.horizontal-title),
+  :deep(.benefits-main-title) {
+    font-size: 2rem;
+  }
+
+  /* Section paddings mobile */
+  :deep(.cta-band-section > *),
+  :deep(.benefits-section > *),
+  :deep(.dark-cta-section > *),
+  :deep(.codelearn-presentation-section > *),
+  :deep(.playing-learning-section > *),
+  :deep(.platform-section > *),
+  :deep(.personalized-learning-section > *),
+  :deep(.modalities-section > *) {
+    padding: var(--section-padding-xs) !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  :deep(.hero-section h1) {
+    font-size: 2rem;
+  }
+
+  :deep(.horizontal-title) {
+    font-size: 2.25rem;
+  }
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1024px) {
+  :deep(.hero-section h1) {
+    font-size: 2.5rem;
+  }
+}

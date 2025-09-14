@@ -1,0 +1,243 @@
+seo:
+  title: 'Codelearn Sant Cugat — Programación para niños y adolescentes'
+  description: 'Si tu hijo/a sabe leer, también puede aprender a programar. Descubre Codelearn Sant Cugat: programación, robótica, IA, 3D y más. Primera clase gratuita.'
+
+header:
+  logo: '/images/landing-sant-cugat/reference/codelearn-logo.png'
+  cta_text: 'QUIERO QUE ME LLAMÉIS'
+  cta_link: '#contacto'
+  languages:
+    - code: 'es'
+      flag: '/images/flags/es.svg'
+      label: 'Español'
+    - code: 'ca'
+      flag: '/images/flags/ct.svg'
+      label: 'Català'
+
+sections:
+  - type: 'vertical'
+    class: 'hero-section'
+    title: 'Si tu hijo/a sabe leer… también puede aprender a **programar**'
+    description: 'De pequeños a nosotros nadie nos enseñó a manejar y entender la tecnología. En nuestra época habían cassettes, DVDs y se escribía con lápiz y papel en el colegio. Ahora la tecnología evoluciona y no para. Por eso, los niños que la dominen antes y con más soltura que otros… inevitablemente tendrán ventaja en sus futuros.'
+    image:
+      desktop: '/images/landing-sant-cugat/reference/student-robot-banner.png'
+      mobile: '/images/landing-sant-cugat/reference/opp.png'
+      alt: 'Estudiante aprendiendo programación con robot'
+    caption: 'Porque la era tecnológica ya está aquí. Lee…'
+    background: 'dark'
+    textAlign: 'center'
+
+  - type: 'horizontal'
+    class: 'horizontal-section'
+    title: 'En 1968 nadie hablaba de internet. Míranos ahora…'
+    content: '…En 1956, John McCarthy acuñó el término "inteligencia artificial" por primera vez. Casi nadie hablaba de ella por sus limitaciones. Ahora… según Technology Magazine… para 2030, la IA transformará el 86 % de las empresas. Es decir, casi 9 de cada 10 que existen cambiarán su manera de operar y los requisitos que buscan en sus empleados. Creando 170 millones de empleos nuevos y eliminando 92 millones ya innecesarios. Eso solo en el lado de la IA. Por otro lado…'
+    bullets:
+      - 'Ya existen taxis que se conducen solos, sin conductor.'
+      - 'Robots humanoides capaces de cocinar comida para nosotros.'
+      - 'Máquinas que desplazan manzanas de edificios enteras en China.'
+    footer: '¿Cómo va a cambiar el mundo de aquí a 20 años? No lo sabemos. Pero la tecnología va a jugar el papel protagonista. Y vamos a depender cada vez más de ella. Ambos lo tenemos claro.'
+    image:
+      src: '/images/landing-sant-cugat/reference/placeholder7.png'
+      alt: 'Inteligencia artificial y tecnología'
+    layout: 'image-left'
+    background: 'white'
+
+  - type: 'vertical'
+    class: 'cta-band-section'
+    title: 'Justo por eso… si a tu peque le gusta la tecnología… ayudarle a dominarla desde joven puede ser una de las mejores inversiones en su futuro.'
+    description: 'No solo porque va a tener que usarla todos los días de su vida (y a mejor la controle, más salidas profesionales tendrá). No solo porque el mejor momento para aprender es siendo niños, cuando absorbemos el conocimiento como esponjas…'
+    background_image: '/images/landing-sant-cugat/reference/student-robot-banner.png'
+    textAlign: 'center'
+    buttons:
+      - label: 'QUIERO QUE ME LLAMÉIS'
+        to: '#contacto'
+        color: 'primary'
+        size: 'xl'
+
+  - type: 'icon-enum'
+    class: 'benefits-section'
+    title: 'Sino porque aprender a programar es algo que se puede aprender desde que eres capaz de leer. Es decir, desde los 5-6 años en adelante.'
+    subtitle: 'Y porque…'
+    items:
+      - icon: 'i-lucide-lightbulb'
+        title: 'Aumentará la creatividad de tu hijo para toda la vida'
+        content: '¿Cómo hago que ese juguete se mueva? ¿Cómo creo un castillo en este juego? Programar, va de crear nuevas soluciones. Nuevas funciones, nuevas ideas y materializarlas.'
+      - icon: 'i-lucide-users'
+        title: 'Aumentará la capacidad de trabajar en equipo de tu hijo'
+        content: 'Durante actividades de programación con ordenador en grupos, los niños hablan más del doble de palabras por minuto que cuando realizan actividades tradicionales (como plastilina o puzzles). Además, tienden a buscar más ayuda entre pares, reforzando la socialización.'
+      - icon: 'i-lucide-triangle-alert'
+        title: 'Aumentará su capacidad de resolver problemas'
+        content: 'Programar le obligará a pensar en pasos ordenados. Y si algo no funciona, le obligará a razonar por qué. Los estudios apoyan que los niños que aprenden a programar aumentan su capacidad de razonar. Una habilidad que les ayudará a ser más elocuentes y a resolver problemas en su futuro de una manera mucho más efectiva y rápida.'
+      - icon: 'i-lucide-smile'
+        title: 'Y es rabiosamente divertido'
+        content: '¡Los niños tienen que jugar! ¡Tienen que crear! Tienen que aprovechar la edad en la que la imaginación y la curiosidad son su mayor superpoder. Y programar les deja imaginar, construir y, sobre todo, sentirse orgullosos de ellos mismos.'
+
+  - type: 'vertical'
+    class: 'dark-text-section'
+    title: 'Además... sólo 1 mes de programación supera—en mejoras cognitivas—a<br>**7 meses de enseñanza tradicional escolar**'
+    background: 'dark'
+    textAlign: 'center'
+
+  - type: 'horizontal'
+    class: 'horizontal-white-section'
+    title: 'Por eso quiero presentarte a Codelearn en Sant Cugat'
+    description: 'Codelearn es una academia extraescolar de pensamiento computacional, programación, robótica, electrónica y mucho más. **Que ha desarrollado un método único que convierte el aprendizaje de la programación en un juego** y anima a sus alumnos a convertirse en creadores de tecnología.'
+    bullets:
+      - 'Ahora mismo tiene X centros en España así que no es una academia nueva que esté arrancando y educando a niños y adolescentes por primera vez.'
+      - 'El equipo detrás de Codelearn está formado por profesores que antes de dedicarse a la docencia trabajaron como programadores para empresas como InfoJobs, Fotocasa, Milanuncios, Coches.net o Habitaclia, entre otros.'
+      - 'Y ha sido reconocido por medios como TV3, El País o La Vanguardia por su innovación y el papel que está jugando en ayudar a niños a aprender algo que el resto de jóvenes suelen aprender en FPs de grado superior o en la universidad.'
+    image:
+      src: '/images/landing-sant-cugat/reference/placeholder8.png'
+      alt: 'Niño aprendiendo programación con robot en Codelearn'
+    layout: 'image-right'
+    background: 'white'
+
+  - type: 'vertical'
+    class: 'dark-text-section'
+    title: 'Pero eso NO es lo mejor ni de lejos...'
+    background: 'dark'
+    textAlign: 'center'
+
+  - type: 'horizontal'
+    class: 'horizontal-white-section'
+    headline: 'En Codelearn...'
+    title: 'Los niñ@s aprenden programación **JUGANDO**'
+    description: 'Miles de niños de 7 a 18 años no solo aprenden a programar mientras juegan a videojuegos como Minecraft o Roblox — o mientras usan LEGOS para crear pequeños robots — también aprenden a usar herramientas como Arduino, lenguajes de programación como Python y... los más avanzados... incluso pueden utilizar impresoras 3D, drones y avanzar en cursos para crear apps, aprender de Blockchain, explotar la IA y entrenarla, etc.'
+    footer: 'Todo en la misma extraescolar.'
+    image:
+      src: '/images/landing-sant-cugat/reference/placeholder9.png'
+      alt: 'Niña aprendiendo programación jugando con robots LEGO'
+    buttons:
+      - label: 'QUIERO QUE ME LLAMÉIS'
+        to: '#contacto'
+        color: 'primary'
+        size: 'lg'
+    layout: 'image-left'
+    background: 'white'
+
+  - type: 'horizontal'
+    class: 'horizontal-white-section'
+    headline: 'Además...'
+    title: 'Lo hacen a través de una plataforma especial y exclusiva. Mira...'
+    description: 'Todos los alumnos de Codelearn aprenden a programar dentro de una plataforma a la que se pueden conectar desde sus portátiles o desde los ordenadores de la academia.'
+    content: 'En esta plataforma, aparecen personajes ficticios del universo de Codelearn. Y **cada curso se presenta como una aventura en la que tu hijo será el protagonista**. El héroe. Los ejercicios se presentan como "retos" que le lanzan estos personajes. Y él tendrá que resolverlos para salvar el día. ¿Cómo? Programando, aprendiendo, trabajando en equipo y divirtiéndose mientras hace gimnasia mental.'
+    image:
+      src: '/images/landing-sant-cugat/reference/placeholder10.png'
+      alt: 'Niño concentrado aprendiendo en la plataforma de Codelearn'
+    buttons:
+      - label: 'QUIERO QUE ME LLAMÉIS'
+        to: '#contacto'
+        color: 'primary'
+        size: 'lg'
+    layout: 'image-right'
+    background: 'white'
+
+  - type: 'horizontal'
+    class: 'horizontal-white-section'
+    title: 'Cada alumno avanza a su ritmo. Sin prisa, pero sin pausa'
+    description: 'Cualquier persona se puede matricular en Codelearn en cualquier momento del año. Y puede aprender desde cero hasta nivel profesional.'
+    content: '**No hay un currículum marcado en el que todos los alumnos deben aprender "a la vez"**. Cada grupo pequeño de alumnos tiene un tutor. Y cada uno aprende a programar, desde la tutela de su mentor, a la velocidad natural a la que ellos avanzan. Si se les da bien → avanzan rápido y ayudan a otros compañeros, pero los miembros más lentos de la clase no los ralentizan. Si avanzan poco a poco, no se sienten agobiados ni frustrados por el nivel del resto de niños. La plataforma se adapta en todo momento a su nivel y le va empujando de forma inteligente según su habilidad. Y el profesor le apoya siempre y le explica la teoría y los conceptos que no termina de aterrizar.'
+    image:
+      src: '/images/landing-sant-cugat/reference/placeholder12.png'
+      alt: 'Niña con gafas aprendiendo programación a su ritmo'
+    buttons:
+      - label: 'QUIERO QUE ME LLAMÉIS'
+        to: '#contacto'
+        color: 'primary'
+        size: 'lg'
+    layout: 'image-left'
+    background: 'white'
+
+  - type: 'horizontal'
+    class: 'horizontal-white-section'
+    headline: 'Y tiene 2 modalidades de matriculación:'
+    title: 'Online o presencial'
+    description: 'Los alumnos, mientras estén matriculados, siempre tendrán acceso a su cuenta dentro de la plataforma Codelearn. **Si no tienes tiempo de llevar a tu hijo una vez en semana a las clases que damos por la mañana de X a X por cuestiones de trabajo o similares...**'
+    content: 'Tu hijo puede aprender online. Tiene 2 opciones: — Conectándose mediante videoconferencia en las clases de la tarde (de 19 a 20h). Ahí se conectará con su tutor y sus compañeros y podrá aprender a programar a su ritmo... desde casa... con el mismo apoyo que si estuviera en la academia rodeado de compañeros. — O de forma autónoma sin videoconferencia. Él irá a su ritmo aprendiendo y si le surge cualquier duda, podrá contactar por chat con su tutor y preguntarle lo que quiera. Esto mejorará su comunicación colateralmente. **Las clases duran 50 minutos – presenciales u online.**'
+    image:
+      src: '/images/landing-sant-cugat/reference/placeholder13.png'
+      alt: 'Chica participando en clase online mediante videoconferencia'
+    buttons:
+      - label: 'QUIERO QUE ME LLAMÉIS'
+        to: '#contacto'
+        color: 'primary'
+        size: 'lg'
+    layout: 'image-right'
+    background: 'white'
+
+  - type: 'vertical'
+    class: 'overlay-section'
+    title: 'En el **Codelearn de Sant Cugat** tu hij@ podrá desarrollar su creatividad, autonomía, capacidad de razonamiento y se podrá divertir mientras aprende una de las habilidades más poderosas y demandadas del momento (y del futuro) – como actividad extraescolar'
+    description: '**¿No sería una buena idea explorar esta oportunidad y averiguar si Codelearn puede ser un gran lugar para que tu peque crezca?**'
+    background: 'image'
+    background_image: '/images/landing-sant-cugat/reference/placeholder8.png'
+    textAlign: 'center'
+
+  - type: 'contact'
+    class: 'contact-section'
+    title: 'Contacto'
+    subtitle: 'Reserva tu clase gratuita de evaluación'
+    fields:
+      - name: 'nombre'
+        label: 'Nombre del alumno'
+        type: 'text'
+        required: true
+      - name: 'edad'
+        label: 'Edad'
+        type: 'number'
+        min: 4
+        max: 18
+        required: true
+      - name: 'email'
+        label: 'Email de contacto'
+        type: 'email'
+        required: true
+      - name: 'telefono'
+        label: 'Teléfono'
+        type: 'tel'
+        required: true
+      - name: 'mensaje'
+        label: 'Mensaje (opcional)'
+        type: 'textarea'
+        placeholder: 'Cuéntanos algo más si quieres'
+        required: false
+    buttons:
+      submit: 'QUIERO QUE ME CONTACTÉIS'
+    contact_info:
+      address: 'C/ Àngel Guimerà, 3.'
+      phone: '93 277 92 78'
+      email: 'santcugat@codelearn.cat'
+
+  - type: 'acordeon'
+    class: 'faq-section'
+    title: 'Algunas preguntas que quizás quieras resolver antes de contactar'
+    description: 'Resolvemos las dudas más frecuentes sobre nuestro programa de programación para niños y adolescentes.'
+    items:
+      - question: '¿Cuál es el precio de la matrícula?'
+        answer: '[Rellenar]'
+      - question: '"Eso de que a Codelearn se va a jugar parece que es más adecuado para niños, pero no lo veo para mi hijo adolescente."'
+        answer: 'La plataforma está gamificada para que los pequeños aprendan jugando, igual que ocurre con apps como Duolingo que sirven para todas las edades. En Codelearn hay alumnos pequeños, adolescentes y hasta adultos, con ejemplos de estudiantes que han seguido hasta los 18 años o durante sus primeros cursos universitarios. Aunque parece infantil, no lo es: los niños disfrutan y los adultos valoran lo aprendido.'
+      - question: '¿Cuánto duran las clases?'
+        answer: 'Las clases duran 50 minutos. Si se asiste presencialmente, solo es necesario acudir un día a la semana; el resto se hacen desde casa. La plataforma limita el número de ejercicios diarios para que el aprendizaje sea progresivo, evitando agobio y manteniendo la motivación. Esto también deja tiempo libre para otras actividades.'
+      - question: '¿El centro de Sant Cugat tiene alguna ventaja sobre otros centros Codelearn?'
+        answer: 'Sí. Aunque lleva 10 años abierto, es de los más modernos. Potencia más que otros centros el diseño 3D y la creación de videojuegos, áreas con gran utilidad y crecimiento en distintos sectores.'
+      - question: '¿Llevar a mi hij@ a Codelearn realmente es una buena inversión?'
+        answer: 'Sí. Aprender a programar tiene beneficios a:<br><br>• <strong>Corto plazo:</strong> mejora el rendimiento académico y el pensamiento lógico (menos problemas en matemáticas).<br>• <strong>Medio plazo:</strong> da autonomía para proyectos personales y escolares.<br>• <strong>Largo plazo:</strong> abre puertas a profesiones del futuro en un mundo digital.<br><br>Además, ayuda a comprender mejor el mundo tecnológico en el que viven y fomenta que sean ciudadanos más críticos y activos.'
+
+  - type: 'footer'
+    class: 'landing-footer'
+    address: 'C/ Àngel Guimerà, 3.'
+    phone: '93 277 92 78'
+    email: 'santcugat@codelearn.cat'
+
+final_cta:
+  title: "¿Listo para que tu hijo/a descubra su <span class='text-highlight'>potencial tecnológico</span>?"
+  content: "Aprovecha que tu hij@ es joven y regálale la posibilidad de aprender la habilidad del futuro: el lenguaje de las máquinas."
+  buttons:
+    - text: '📞 QUIERO QUE ME LLAMÉIS'
+      link: '#contacto'
+      style: 'white'
+    - text: '💬 WhatsApp'
+      link: 'https://wa.me/34600000000?text=Hola%20Codelearn%20Sant%20Cugat'
+      style: 'outline'
+      target: '_blank'
