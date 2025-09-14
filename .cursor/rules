@@ -1,0 +1,49 @@
+# Cursor AI Rules
+
+## Primary Instructions Source
+
+**All development instructions, patterns, and architectural decisions are maintained in [AGENTS.md](../AGENTS.md).**
+
+Please read and follow the comprehensive development guide in `AGENTS.md` which contains:
+
+- Project architecture and component system documentation
+- Layout-based component patterns and conventions
+- Development commands and build processes
+- Content creation and management workflows
+- Troubleshooting guides and best practices
+
+## Cursor-Specific Guidelines
+
+1. **Reference AGENTS.md First**: Always consult AGENTS.md for architectural decisions and development patterns
+2. **Layout-Based Components**: Use layout-oriented components (`LandingVerticalSection`, `LandingHorizontalSection`, etc.) rather than semantic ones
+3. **Nuxt UI First**: Always use Nuxt UI components before creating custom ones
+4. **Content-Driven**: Pages are built from YAML content files in `content/landing/`
+5. **Updates**: When making architectural changes, update AGENTS.md accordingly
+
+## Quick Navigation
+
+- **Main Agent Guide**: [AGENTS.md](../AGENTS.md) - Complete development instructions
+- **Project Setup**: [README.md](../README.md) - Quick start and overview
+- **Content Schema**: [content.config.ts](../content.config.ts) - Content validation rules
+- **Component Library**: [app/components/landing/](../app/components/landing/) - Landing components
+
+## Development Workflow
+
+1. Consult AGENTS.md for layout patterns and architectural guidance
+2. Create content files in `content/landing/{name}.yml` following the schema
+3. Add prerender routes to `nuxt.config.ts`
+4. Always run `pnpm lint && pnpm typecheck` before commits
+5. Test pages at `/landing/{name}` URL structure
+
+## Technology Stack
+
+- **Framework**: Nuxt.js 4
+- **UI Library**: Nuxt UI Pro
+- **Content**: Nuxt Content v3
+- **Styling**: Tailwind CSS
+- **Icons**: Iconify (Lucide icons)
+- **Package Manager**: pnpm
+
+---
+
+*This rules file ensures Cursor AI follows the same development standards as other AI agents working on this modular landing page system.*
