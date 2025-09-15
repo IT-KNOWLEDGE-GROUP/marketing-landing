@@ -69,7 +69,7 @@ sections:
         required: false
       - name: 'edad del nen/a'
         field: 'age'
-        label: 'Edat'
+        label: 'Edat del jove'
         type: 'text'
         required: false
       - name: 'email'
@@ -79,7 +79,7 @@ sections:
         required: false
       - name: 'telefono'
         field: 'phone'
-        label: 'Telèfon dels pares'
+        label: 'Telèfon mòbil dels pares'
         type: 'tel'
         required: false
       - name: 'mensaje'
