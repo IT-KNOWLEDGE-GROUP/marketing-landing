@@ -12,6 +12,11 @@ export default defineNuxtConfig({
     baseURL: process.env.NODE_ENV === 'production' ? '/marketing-landing/' : '/'
   },
 
+  // Disable IPX image optimization for GitHub Pages
+  image: {
+    provider: 'none'
+  },
+
   devtools: {
     enabled: true
   },
