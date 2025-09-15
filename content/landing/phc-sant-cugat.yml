@@ -56,17 +56,12 @@ sections:
   - type: 'contact'
     class: 'contact-section'
     id: 'contacto'
-    title: 'Reserva la teva prova gratuïta'
+    title: 'Demana més informació o reserva la teva prova gratuïta sense compromís'
     subtitle: 'Només heu de reservar abans que acabi setembre'
     fields:
       - name: 'nombre'
         field: 'name'
         label: 'Nom del pare/mare'
-        type: 'text'
-        required: false
-      - name: 'edad del nen/a'
-        field: 'age'
-        label: 'Edat del jove'
         type: 'text'
         required: false
       - name: 'email'
@@ -81,12 +76,12 @@ sections:
         required: false
       - name: 'mensaje'
         field: 'message'
-        label: 'Missatge'
+        label: 'Comentaris/preguntes'
         type: 'textarea'
         placeholder: 'Menciona que sou del PHC Sant Cugat i si vindreu amb un amic'
         required: false
     buttons:
-      submit: 'RESERVAR PROVA GRATUÏTA'
+      submit: 'Enviar'
     webhook_url: 'https://hook.eu2.make.com/rcx3c0ilw6lh8b9e0krt1wtdiem85bf8'
     background: 'gray'
 
