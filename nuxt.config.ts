@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     '@nuxt/content'
   ],
 
+  // GitHub Pages deployment configuration
+  app: {
+    baseURL: process.env.NODE_ENV === 'production' ? '/marketing-landing/' : '/'
+  },
+
   devtools: {
     enabled: true
   },
@@ -45,6 +50,9 @@ export default defineNuxtConfig({
       ]
     }
   },
+
+  // Additional GitHub Pages optimizations
+  ssr: false, // Static site generation
 
   eslint: {
     config: {

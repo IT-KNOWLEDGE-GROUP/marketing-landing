@@ -30,14 +30,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Generate static files
-        run: pnpm run generate
+        run: NODE_ENV=production pnpm run build --preset github_pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
