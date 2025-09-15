@@ -55,7 +55,8 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/',
-        '/landing/sant-cugat'
+        '/landing/sant-cugat',
+        '/landing/phc-sant-cugat'
       ]
     }
   },

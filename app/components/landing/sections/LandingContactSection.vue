@@ -26,6 +26,7 @@ interface ContactSectionData {
   fields: ContactField[]
   buttons: ContactButtons
   contact_info?: ContactInfo
+  id?: string
 }
 
 interface Props {
@@ -78,6 +79,7 @@ const sectionUI = computed(() => ({
 
 <template>
   <UPageSection
+    :id="contact.id"
     :ui="sectionUI"
     :class="class"
   >

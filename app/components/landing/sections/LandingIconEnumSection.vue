@@ -71,6 +71,13 @@ const timelineItems = computed(() => {
     color: 'primary' // Verde Codelearn
   }))
 })
+
+// UI configuration para timeline compacto
+const timelineUI = {
+  container: 'space-y-2', // Reducir espacio vertical entre items
+  item: 'pb-2', // Reducir padding bottom de cada item
+  wrapper: 'mb-2' // Reducir margen bottom del wrapper
+}
 </script>
 
 <template>
@@ -95,7 +102,7 @@ const timelineItems = computed(() => {
 
         <!-- Timeline de beneficios (derecha) -->
         <div class="benefits-timeline-container">
-          <UTimeline :items="timelineItems" />
+          <UTimeline :items="timelineItems" :ui="timelineUI" />
         </div>
       </div>
     </template>

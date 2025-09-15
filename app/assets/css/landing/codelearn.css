@@ -788,6 +788,27 @@
   --primary-600: #7bd730;
 }
 
+/* Reducir espaciado entre elementos del timeline */
+:deep(.benefits-section .UTimeline li) {
+  margin-bottom: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+:deep(.benefits-section .UTimeline li:last-child) {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Reducir espaciado interno de cada item del timeline */
+:deep(.benefits-section .UTimeline .relative) {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Reducir el gap entre el contenido de texto y el siguiente elemento */
+:deep(.benefits-section .ml-4) {
+  margin-bottom: 0.5rem !important;
+}
+
 /* Timeline item styling with more specific selectors */
 :deep(.benefits-section .relative .flex .rounded-full) {
   background-color: transparent !important;

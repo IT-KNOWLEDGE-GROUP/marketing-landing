@@ -1,0 +1,109 @@
+seo:
+  title: 'Oferta Especial PHC Sant Cugat — 55% Descuento Codelearn'
+  description: 'Última oportunidad: 55% descuento en matrícula + clase gratuita para jugadores PHC Sant Cugat. Tecnología creativa para la salud mental juvenil.'
+
+header:
+  logo: '/images/landing-sant-cugat/reference/codelearn-logo.png'
+  cta_text: 'RESERVAR CLASE GRATUITA'
+  cta_link: '#contacto'
+  languages: []
+
+sections:
+  - type: 'vertical'
+    class: 'hero-section'
+    title: '**Última oportunitat PHC Sant Cugat:**<br/> 55% descompte fins final de setembre'
+    description: 'Hem arribat a un acord especial amb el PHC Sant Cugat. Els seus jugadors i jugadores poden aprendre programació, IA i robòtica amb un 55% de descompte + classe gratuïta per a tu i un amic.'
+    image:
+      desktop: '/images/landing-sant-cugat/reference/student-robot-banner.png'
+      mobile: '/images/landing-sant-cugat/reference/opp.png'
+      alt: 'Oferta especial PHC Sant Cugat Codelearn'
+    background: 'dark'
+    textAlign: 'center'
+
+  - type: 'horizontal'
+    class: 'horizontal-section'
+    title: "No n'hi ha prou amb l'esport per la salut mental dels joves"
+    content: "Els experts ho diuen clar: el risc número 1 per als joves catalans és la salut mental. Estats d'ànim baixos, ansietat, pèrdua de confiança... I la tecnologia hi juga un paper clau. No perquè sigui dolenta, sinó perquè la majoria dels nanos **només la consumeixen**."
+    footer: "Quan només consumeixes, s'altera el circuit de la recompensa. Et compares. Et buides. Et sents menys. **Però quan fas servir la tecnologia per crear, la cosa canvia.**"
+    image:
+      src: '/images/landing-sant-cugat/reference/placeholder7.png'
+      alt: 'Tecnología creativa vs consumo pasivo'
+    layout: 'image-right'
+    background: 'white'
+
+  - type: 'vertical'
+    class: 'cta-band-section'
+    title: 'Crear jocs, apps, bots, negocis… et dona confiança, propòsit, autoestima'
+    description: 'Et fa sentir capaç. Et fa tenir un propòsit positiu. Això és el que ensenya Codelearn: crear amb intel·ligència artificial, programació, robòtica… I ho ensenya jugant.'
+    background_image: '/images/landing-sant-cugat/reference/student-robot-banner.png'
+    textAlign: 'center'
+
+  - type: 'icon-enum'
+    class: 'benefits-section'
+    title: 'Oferta exclusiva PHC Sant Cugat'
+    subtitle: 'Hem arribat a un acord especial. Els jugadors del PHC Sant Cugat podeu disfrutar de:'
+    items:
+      - icon: 'i-lucide-target'
+        title: '55% descompte matrícula'
+        content: "Estalvia més de la meitat del cost normal. Oferta vàlida només fins final de setembre."
+      - icon: 'i-lucide-gift'
+        title: 'Classe gratuïta per tu i amic'
+        content: 'Prova gratuïta per al jugador/jugadora i un amic. Sense compromís.'
+      - icon: 'i-lucide-rocket'
+        title: 'Tecnologia del futur'
+        content: 'Intel·ligència artificial, programació, robòtica... Les eines que definiran el món de demà.'
+      - icon: 'i-lucide-gamepad-2'
+        title: 'Aprendre jugant'
+        content: "Metodologia lúdica que manté els nanos motivats i compromesos amb l'aprenentatge."
+
+  - type: 'contact'
+    class: 'contact-section'
+    id: 'contacto'
+    title: 'Reserva la teva classe gratuïta'
+    subtitle: 'Últims dies per aprofitar el 55% de descompte'
+    fields:
+      - name: 'nombre'
+        label: 'Nom del jugador/jugadora'
+        type: 'text'
+        required: true
+      - name: 'edad'
+        label: 'Edat'
+        type: 'number'
+        min: 4
+        max: 18
+        required: true
+      - name: 'email'
+        label: 'Email de contacte'
+        type: 'email'
+        required: true
+      - name: 'telefono'
+        label: 'Telèfon dels pares'
+        type: 'tel'
+        required: true
+      - name: 'mensaje'
+        label: 'Missatge'
+        type: 'textarea'
+        placeholder: 'Menciona que sou del PHC Sant Cugat i si vindreu amb un amic'
+        required: false
+    buttons:
+      submit: 'RESERVAR CLASSE GRATUÏTA'
+    background: 'gray'
+
+  - type: 'acordeon'
+    class: 'faq-section'
+    title: "Preguntes freqüents sobre l'oferta"
+    items:
+      - question: "Fins quan és vàlida l'oferta del 55%?"
+        answer: "L'oferta és vàlida fins al <strong>30 de setembre de 2024</strong>. Després d'aquesta data, el preu tornarà al normal."
+      - question: 'Com puc demostrar que sóc del PHC Sant Cugat?'
+        answer: "Només has de dir-ho quan programis la classe gratuïta. És així de senzill."
+      - question: "La classe gratuïta té algún cost ocult?"
+        answer: "No, la classe gratuïta és completament <strong>sense cost ni compromís</strong>. Pots venir, provar, i decidir després."
+      - question: 'Puc portar un amic que no sigui del PHC?'
+        answer: "Sí! L'oferta inclou classe gratuïta per al jugador/jugadora <strong>i un amic</strong>, sigui del PHC o no."
+
+  - type: 'footer'
+    class: 'landing-footer'
+    address: 'C/ Àngel Guimerà, 3, Sant Cugat'
+    phone: '93 277 92 78'
+    email: 'santcugat@codelearn.cat'
