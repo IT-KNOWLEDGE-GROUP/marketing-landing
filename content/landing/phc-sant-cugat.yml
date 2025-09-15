@@ -25,10 +25,7 @@ sections:
     title: "No n'hi ha prou en fer esport"
     content: "Els experts ho diuen clar: el risc número 1 per als joves catalans no és l'alcohol ni les drogues. És la salut mental. Estats d'ànim baixos, ansietat, pèrdua de confiança, fins i tot ideacions suïcides. I la tecnologia hi juga un paper clau. No perquè sigui dolenta, sinó perquè **la majoria dels joves només la consumeixen**."
     footer: "Quan només consumeixes, s'altera el circuit de la recompensa. Et compares. Et buides. Et sents menys. **Però quan fas servir la tecnologia per crear, la cosa canvia.**"
-    image:
-      src: '/images/landing-sant-cugat/reference/placeholder7.png'
-      alt: 'Tecnología creativa vs consumo pasivo'
-    layout: 'image-right'
+    layout: 'text-only'
     background: 'white'
 
   - type: 'vertical'
