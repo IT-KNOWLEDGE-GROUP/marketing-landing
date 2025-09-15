@@ -21,6 +21,18 @@ interface Props {
 
 const props = defineProps<Props>()
 
+// Usar el composable para rutas de assets
+const { resolveAssetUrl } = useAssetUrl()
+
+// Computed properties para rutas de imágenes
+const logoSrc = computed(() => resolveAssetUrl(props.header.logo))
+const languageFlags = computed(() =>
+  props.header.languages.map(lang => ({
+    ...lang,
+    flagSrc: resolveAssetUrl(lang.flag)
+  }))
+)
+
 // Configuración de UI personalizada para el header
 const headerUI = computed(() => ({
   // Forzar fondo blanco puro y posición normal
@@ -37,7 +49,7 @@ const headerUI = computed(() => ({
     <!-- Logo Slot -->
     <template #title>
       <NuxtImg
-        :src="header.logo"
+        :src="logoSrc"
         alt="Codelearn"
         class="h-8 w-auto"
         loading="eager"
@@ -60,9 +72,9 @@ const headerUI = computed(() => ({
       <!-- Language Flags -->
       <div class="flex items-center gap-2">
         <NuxtImg
-          v-for="lang in header.languages"
+          v-for="lang in languageFlags"
           :key="lang.code"
-          :src="lang.flag"
+          :src="lang.flagSrc"
           :alt="lang.label"
           :title="lang.label"
           class="h-5 w-5 rounded-sm cursor-pointer hover:scale-110 transition-transform"

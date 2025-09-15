@@ -34,8 +34,9 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Usar el composable para procesar markdown inline
+// Usar los composables necesarios
 const { parseInline } = useMarkdown()
+const { resolveAssetUrl } = useAssetUrl()
 
 // Procesar contenido con markdown
 const processedTitle = computed(() => parseInline(props.section.title))
@@ -68,6 +69,11 @@ const sectionUI = computed(() => props.ui || {})
 
 // Determinar el layout
 const isImageLeft = computed(() => props.section.layout === 'image-left')
+
+// Computed property para ruta de imagen
+const imageSrc = computed(() =>
+  props.section.image?.src ? resolveAssetUrl(props.section.image.src) : ''
+)
 </script>
 
 <template>
@@ -86,7 +92,7 @@ const isImageLeft = computed(() => props.section.layout === 'image-left')
           ]"
         >
           <NuxtImg
-            :src="section.image.src"
+            :src="imageSrc"
             :alt="section.image.alt || section.title"
             class="w-full rounded-lg shadow-lg"
             loading="eager"

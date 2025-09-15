@@ -37,8 +37,9 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Usar el composable para procesar markdown inline
+// Usar los composables necesarios
 const { parseInline } = useMarkdown()
+const { resolveAssetUrl } = useAssetUrl()
 
 // Procesar el título para renderizar markdown
 const processedTitle = computed(() => parseInline(props.section.title))
@@ -70,7 +71,7 @@ const imageContainerClass = computed(() => 'hero-image-container')
 const backgroundImageStyle = computed(() => {
   if (props.section.background_image) {
     return {
-      backgroundImage: `url('${props.section.background_image}')`,
+      backgroundImage: `url('${resolveAssetUrl(props.section.background_image)}')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
@@ -78,6 +79,21 @@ const backgroundImageStyle = computed(() => {
   }
   return {}
 })
+
+// Computed properties para rutas de imágenes
+const desktopImageSrc = computed(() =>
+  props.section.image?.desktop ? resolveAssetUrl(props.section.image.desktop) : ''
+)
+
+const mobileImageSrc = computed(() =>
+  props.section.image?.mobile ? resolveAssetUrl(props.section.image.mobile) : ''
+)
+
+const singleImageSrc = computed(() =>
+  props.section.image && typeof props.section.image === 'string'
+    ? resolveAssetUrl(props.section.image)
+    : ''
+)
 </script>
 
 <template>
@@ -97,8 +113,8 @@ const backgroundImageStyle = computed(() => {
       <div v-if="section.image" :class="imageContainerClass">
         <!-- Imagen Desktop -->
         <NuxtImg
-          v-if="section.image.desktop"
-          :src="section.image.desktop"
+          v-if="desktopImageSrc"
+          :src="desktopImageSrc"
           :alt="section.image.alt || section.title"
           class="hidden md:block w-full rounded-lg shadow-xl"
           loading="eager"
@@ -108,8 +124,8 @@ const backgroundImageStyle = computed(() => {
 
         <!-- Imagen Mobile -->
         <NuxtImg
-          v-if="section.image.mobile"
-          :src="section.image.mobile"
+          v-if="mobileImageSrc"
+          :src="mobileImageSrc"
           :alt="section.image.alt || section.title"
           class="md:hidden block w-full max-w-sm mx-auto rounded-lg shadow-xl"
           loading="eager"
@@ -119,8 +135,8 @@ const backgroundImageStyle = computed(() => {
 
         <!-- Imagen única (si no hay desktop/mobile separadas) -->
         <NuxtImg
-          v-else-if="!section.image.desktop && !section.image.mobile"
-          :src="section.image"
+          v-else-if="singleImageSrc"
+          :src="singleImageSrc"
           :alt="section.image.alt || section.title"
           class="w-full rounded-lg shadow-xl"
           loading="eager"

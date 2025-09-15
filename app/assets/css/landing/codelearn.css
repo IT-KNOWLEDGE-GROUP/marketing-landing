@@ -1158,6 +1158,11 @@
 @media (max-width: 1024px) {
   :deep(.hero-section h1) {
     font-size: 2rem;
+    margin: 0 3rem 1.5rem 3rem;
+  }
+
+  :deep(.hero-section p) {
+    margin: 0 3rem 2.5rem 3rem;
   }
 
   :deep(.horizontal-title) {
