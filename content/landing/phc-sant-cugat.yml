@@ -4,15 +4,15 @@ seo:
 
 header:
   logo: '/images/landing-sant-cugat/reference/codelearn-logo.png'
-  cta_text: 'RESERVAR CLASE GRATUITA'
+  cta_text: 'RESERVAR PROVA GRATUÏTA'
   cta_link: '#contacto'
   languages: []
 
 sections:
   - type: 'vertical'
     class: 'hero-section'
-    title: '**Última oportunitat PHC Sant Cugat:**<br/> 55% descompte fins final de setembre'
-    description: 'Hem arribat a un acord especial amb el PHC Sant Cugat. Els seus jugadors i jugadores poden aprendre programació, IA i robòtica amb un 55% de descompte + classe gratuïta per a tu i un amic.'
+    title: '**Acord exclusiu PHC Sant Cugat:**<br/> 60% descompte fins final de setembre'
+    description: 'Hem signat un acord exclusiu amb Codelearn. Els jugadors i jugadores del PHC Sant Cugat podeu aprendre programació, IA i robòtica amb un 60% de descompte + prova gratuïta per a tu i un amic.'
     image:
       desktop: '/images/landing-sant-cugat/reference/student-robot-banner.png'
       mobile: '/images/landing-sant-cugat/reference/opp.png'
@@ -22,8 +22,8 @@ sections:
 
   - type: 'horizontal'
     class: 'horizontal-section'
-    title: "No n'hi ha prou amb l'esport per la salut mental dels joves"
-    content: "Els experts ho diuen clar: el risc número 1 per als joves catalans és la salut mental. Estats d'ànim baixos, ansietat, pèrdua de confiança... I la tecnologia hi juga un paper clau. No perquè sigui dolenta, sinó perquè la majoria dels nanos **només la consumeixen**."
+    title: "No n'hi ha prou en fer esport"
+    content: "Els experts ho diuen clar: el risc número 1 per als joves catalans no és l'alcohol ni les drogues. És la salut mental. Estats d'ànim baixos, ansietat, pèrdua de confiança, fins i tot ideacions suïcides. I la tecnologia hi juga un paper clau. No perquè sigui dolenta, sinó perquè **la majoria dels joves només la consumeixen**."
     footer: "Quan només consumeixes, s'altera el circuit de la recompensa. Et compares. Et buides. Et sents menys. **Però quan fas servir la tecnologia per crear, la cosa canvia.**"
     image:
       src: '/images/landing-sant-cugat/reference/placeholder7.png'
@@ -33,22 +33,22 @@ sections:
 
   - type: 'vertical'
     class: 'cta-band-section'
-    title: 'Crear jocs, apps, bots, negocis… et dona confiança, propòsit, autoestima'
-    description: 'Et fa sentir capaç. Et fa tenir un propòsit positiu. Això és el que ensenya Codelearn: crear amb intel·ligència artificial, programació, robòtica… I ho ensenya jugant.'
+    title: 'Crear jocs, apps, bots, negocis… et dóna confiança, propòsit, autoestima'
+    description: 'Et fa sentir capaç i et prepara pel futur laboral amb les competències millor pagades del món! Això és el que ensenya Codelearn: crear amb intel·ligència artificial, programació, robòtica… Jugant i passant-ho molt bé.'
     background_image: '/images/landing-sant-cugat/reference/student-robot-banner.png'
     textAlign: 'center'
 
   - type: 'icon-enum'
     class: 'benefits-section'
-    title: 'Oferta exclusiva PHC Sant Cugat'
-    subtitle: 'Hem arribat a un acord especial. Els jugadors del PHC Sant Cugat podeu disfrutar de:'
+    title: 'Acord exclusiu PHC Sant Cugat'
+    subtitle: 'Hem signat un acord exclusiu amb Codelearn. Els jugadors del PHC Sant Cugat podreu gaudir de:'
     items:
       - icon: 'i-lucide-target'
-        title: '55% descompte matrícula'
+        title: '60% descompte matrícula'
         content: "Estalvia més de la meitat del cost normal. Oferta vàlida només fins final de setembre."
       - icon: 'i-lucide-gift'
-        title: 'Classe gratuïta per tu i amic'
-        content: 'Prova gratuïta per al jugador/jugadora i un amic. Sense compromís.'
+        title: 'Prova gratuïta per tu i amic'
+        content: 'Una prova gratuïta per a jugadors/jugadores i un amic. Sense compromís.'
       - icon: 'i-lucide-rocket'
         title: 'Tecnologia del futur'
         content: 'Intel·ligència artificial, programació, robòtica... Les eines que definiran el món de demà.'
@@ -59,8 +59,8 @@ sections:
   - type: 'contact'
     class: 'contact-section'
     id: 'contacto'
-    title: 'Reserva la teva classe gratuïta'
-    subtitle: 'Últims dies per aprofitar el 55% de descompte'
+    title: 'Reserva la teva prova gratuïta'
+    subtitle: 'Només heu de reservar abans que acabi setembre'
     fields:
       - name: 'nombre'
         field: 'name'
@@ -89,7 +89,7 @@ sections:
         placeholder: 'Menciona que sou del PHC Sant Cugat i si vindreu amb un amic'
         required: false
     buttons:
-      submit: 'RESERVAR CLASSE GRATUÏTA'
+      submit: 'RESERVAR PROVA GRATUÏTA'
     webhook_url: 'https://hook.eu2.make.com/rcx3c0ilw6lh8b9e0krt1wtdiem85bf8'
     background: 'gray'
 
@@ -97,7 +97,7 @@ sections:
     class: 'faq-section'
     title: "Preguntes freqüents sobre l'oferta"
     items:
-      - question: "Fins quan és vàlida l'oferta del 55%?"
+      - question: "Fins quan és vàlida l'oferta del 60%?"
         answer: "L'oferta és vàlida fins al <strong>30 de setembre de 2024</strong>. Després d'aquesta data, el preu tornarà al normal."
       - question: 'Com puc demostrar que sóc del PHC Sant Cugat?'
         answer: "Només has de dir-ho quan programis la classe gratuïta. És així de senzill."

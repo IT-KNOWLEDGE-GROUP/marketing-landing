@@ -1057,6 +1057,7 @@
   font-size: 16px !important;
   font-weight: normal !important;
   background: white !important;
+  color: #1f2937 !important;
   transition: border-color 0.2s ease !important;
 }
 
@@ -1126,6 +1127,13 @@
   :deep(.contact-section .contact-submit-btn) {
     width: 100%;
     max-width: 100%;
+  }
+
+  /* Ensure text is visible on mobile */
+  :deep(.contact-section .form-input input),
+  :deep(.contact-section .form-textarea textarea) {
+    color: #1f2937 !important;
+    background: white !important;
   }
 }
 
