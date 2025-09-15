@@ -63,30 +63,34 @@ sections:
     subtitle: 'Últims dies per aprofitar el 55% de descompte'
     fields:
       - name: 'nombre'
-        label: 'Nom del jugador/jugadora'
+        field: 'name'
+        label: 'Nom del pare/mare'
         type: 'text'
-        required: true
-      - name: 'edad'
+        required: false
+      - name: 'edad del nen/a'
+        field: 'age'
         label: 'Edat'
-        type: 'number'
-        min: 4
-        max: 18
-        required: true
+        type: 'text'
+        required: false
       - name: 'email'
+        field: 'email'
         label: 'Email de contacte'
         type: 'email'
-        required: true
+        required: false
       - name: 'telefono'
+        field: 'phone'
         label: 'Telèfon dels pares'
         type: 'tel'
-        required: true
+        required: false
       - name: 'mensaje'
+        field: 'message'
         label: 'Missatge'
         type: 'textarea'
         placeholder: 'Menciona que sou del PHC Sant Cugat i si vindreu amb un amic'
         required: false
     buttons:
       submit: 'RESERVAR CLASSE GRATUÏTA'
+    webhook_url: 'https://hook.eu2.make.com/rcx3c0ilw6lh8b9e0krt1wtdiem85bf8'
     background: 'gray'
 
   - type: 'acordeon'

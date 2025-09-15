@@ -1,6 +1,7 @@
 <script setup lang="ts">
 interface ContactField {
   name: string
+  field: string
   label: string
   type: 'text' | 'email' | 'tel' | 'number' | 'textarea'
   placeholder?: string
@@ -27,6 +28,7 @@ interface ContactSectionData {
   buttons: ContactButtons
   contact_info?: ContactInfo
   id?: string
+  webhook_url?: string
 }
 
 interface Props {
@@ -61,9 +63,43 @@ const getFieldPlaceholder = (field: ContactField) => {
 // Handle form submission
 const submitForm = async () => {
   isSubmitting.value = true
-  // TODO: Implement form submission logic
-  await new Promise(resolve => setTimeout(resolve, 1000))
-  console.log('Form data:', formData.value)
+
+  try {
+    if (props.contact.webhook_url) {
+      // Map form data using the 'field' names for webhook
+      const webhookData: Record<string, any> = {}
+      props.contact.fields.forEach(field => {
+        webhookData[field.field] = formData.value[field.name]
+      })
+
+      const response = await fetch(props.contact.webhook_url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookData)
+      })
+
+      if (response.ok) {
+        // Success - maybe show success message or redirect
+        console.log('Form submitted successfully')
+        alert('Formulari enviat correctament! Ens posarem en contacte aviat.')
+
+        // Reset form
+        const initialData: Record<string, any> = {}
+        props.contact.fields.forEach(field => {
+          initialData[field.name] = field.type === 'number' ? null : ''
+        })
+        formData.value = initialData
+      } else {
+        throw new Error('Failed to submit form')
+      }
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error)
+    alert('Error enviant el formulari. Si us plau, torneu-ho a intentar.')
+  }
+
   isSubmitting.value = false
 }
 
