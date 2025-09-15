@@ -7,6 +7,7 @@ interface Language {
 
 interface HeaderData {
   logo: string
+  partner_logo?: string
   cta_text: string
   cta_link: string
   languages: Language[]
@@ -26,6 +27,9 @@ const { resolveAssetUrl } = useAssetUrl()
 
 // Computed properties para rutas de imágenes
 const logoSrc = computed(() => resolveAssetUrl(props.header.logo))
+const partnerLogoSrc = computed(() =>
+  props.header.partner_logo ? resolveAssetUrl(props.header.partner_logo) : null
+)
 const languageFlags = computed(() =>
   props.header.languages.map(lang => ({
     ...lang,
@@ -45,16 +49,26 @@ const headerUI = computed(() => ({
 </script>
 
 <template>
-  <UHeader :ui="headerUI" :class="['bg-white', 'static', props.class]">
+  <UHeader :ui="headerUI" :class="['bg-white', 'static', props.class]" to="#">
     <!-- Logo Slot -->
     <template #title>
-      <NuxtImg
-        :src="logoSrc"
-        alt="Codelearn"
-        class="h-8 w-auto"
-        loading="eager"
-        format="webp"
-      />
+      <div class="flex items-center gap-4">
+        <NuxtImg
+          :src="logoSrc"
+          alt="Codelearn"
+          class="h-8 w-auto"
+          loading="eager"
+          format="webp"
+        />
+        <NuxtImg
+          v-if="partnerLogoSrc"
+          :src="partnerLogoSrc"
+          alt="PHC Sant Cugat"
+          class="h-8 w-auto"
+          loading="eager"
+          format="webp"
+        />
+      </div>
     </template>
 
     <!-- Right side actions -->
