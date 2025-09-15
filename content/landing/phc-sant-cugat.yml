@@ -30,8 +30,8 @@ sections:
 
   - type: 'vertical'
     class: 'cta-band-section'
-    title: 'Crear jocs, apps, bots, negocis… et dóna confiança, propòsit, autoestima'
-    description: 'Et fa sentir capaç i et prepara pel futur laboral amb les competències millor pagades del món! Això és el que ensenya Codelearn: crear amb intel·ligència artificial, programació, robòtica… Jugant i passant-ho molt bé.'
+    title: "\"La programació és una habilitat essencial per descobrir els secrets de l'univers o tenir èxit al segle XXI\" - Stephen Hawking"
+    description: 'Codelearn no només ensenya a programar. Desenvolupa el pensament computacional, la creativitat i les habilitats de resolució de problemes que els teus fills utilitzaran tota la vida. Tot això jugant i descobrint un univers de personatges fascinants.'
     background_image: '/images/landing-sant-cugat/reference/student-robot-banner.png'
     textAlign: 'center'
 
@@ -46,12 +46,20 @@ sections:
       - icon: 'i-lucide-gift'
         title: 'Prova gratuïta per tu i amic'
         content: 'Una prova gratuïta per a jugadors/jugadores i un amic. Sense compromís.'
-      - icon: 'i-lucide-rocket'
-        title: 'Tecnologia del futur'
-        content: 'Intel·ligència artificial, programació, robòtica... Les eines que definiran el món de demà.'
+      - icon: 'i-lucide-brain'
+        title: 'Pensament computacional'
+        content: 'Desenvolupem les habilitats de resolució de problemes que serviran per a tota la vida, no només per a la tecnologia.'
       - icon: 'i-lucide-gamepad-2'
-        title: 'Aprendre jugant'
-        content: "Metodologia lúdica que manté els nanos motivats i compromesos amb l'aprenentatge."
+        title: 'El gimnàs de la seva ment'
+        content: "Aprendre jugant amb un univers de personatges fascinants que converteix cada lliçó en una aventura emocionant."
+
+  - type: 'horizontal'
+    class: 'horizontal-section'
+    title: 'Més que programar: preparar-los per al futur'
+    content: "A Codelearn, cada estudiant avança al seu propi ritme a través d'una plataforma gamificada online. Desenvolupen pensament abstracte, lògica i creativitat mentre es diverteixen creant projectes reals que els omplen d'orgull."
+    footer: "Perquè l'aprenentatge ha de ser divertit, personalitzat i prepararlos per comunicar-se amb les màquines del segle XXI."
+    layout: 'text-only'
+    background: 'white'
 
   - type: 'contact'
     class: 'contact-section'
