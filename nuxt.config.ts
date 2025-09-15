@@ -4,7 +4,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/ui',
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-gtag'
   ],
 
   // GitHub Pages deployment configuration
@@ -59,6 +60,11 @@ export default defineNuxtConfig({
         '/landing/phc-sant-cugat'
       ]
     }
+  },
+
+  // Google Analytics configuration
+  gtag: {
+    id: 'G-K082FK3MGR'
   },
 
   // Additional GitHub Pages optimizations
