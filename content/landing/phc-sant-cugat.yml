@@ -3,7 +3,7 @@ seo:
   description: 'Última oportunidad: 60% descuento en matrícula + clase gratuita para jugadores PHC Sant Cugat. Tecnología creativa para la salud mental juvenil.'
 
 header:
-  logo: '/images/landing-sant-cugat/reference/codelearn-logo.png'
+  logo: '/images/landing-sant-cugat/reference/codelearn-logo-optimized.jpg'
   cta_text: 'RESERVAR PROVA GRATUÏTA'
   cta_link: '#contacto'
   languages: []
@@ -25,7 +25,7 @@ sections:
     description: 'Hem signat un acord exclusiu amb Codelearn. Els jugadors i jugadores del PHC Sant Cugat podeu aprendre programació, IA i robòtica amb un 60% de descompte + prova gratuïta per a tu i un amic.'
     image:
       desktop: '/images/landing-sant-cugat/reference/student-robot-banner.png'
-      mobile: '/images/landing-sant-cugat/reference/opp.png'
+      mobile: '/images/landing-sant-cugat/reference/opp-optimized.jpg'
       alt: 'Oferta especial PHC Sant Cugat Codelearn'
     background: 'dark'
     textAlign: 'center'
