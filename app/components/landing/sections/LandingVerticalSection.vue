@@ -150,7 +150,7 @@ const combinedClass = computed(() => {
           loading="eager"
           format="webp"
           sizes="(max-width: 768px) 100vw, 896px"
-          :fetchpriority="isHero || class?.includes('hero-section') ? 'high' : undefined"
+          :fetchpriority="isHero || props.class?.includes('hero-section') ? 'high' : undefined"
         />
 
         <!-- Imagen Mobile -->
@@ -162,7 +162,7 @@ const combinedClass = computed(() => {
           loading="eager"
           format="webp"
           sizes="(max-width: 768px) 384px, 100vw"
-          :fetchpriority="isHero || class?.includes('hero-section') ? 'high' : undefined"
+          :fetchpriority="isHero || props.class?.includes('hero-section') ? 'high' : undefined"
         />
 
         <!-- Imagen única (si no hay desktop/mobile separadas) -->
