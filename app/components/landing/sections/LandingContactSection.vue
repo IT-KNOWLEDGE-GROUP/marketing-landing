@@ -129,58 +129,33 @@ const sectionUI = computed(() => ({
         <!-- Formulario centrado -->
         <div class="contact-form-container">
           <form @submit.prevent="submitForm" class="contact-form">
-            <UInput
-              v-model="formData.nombre"
-              type="text"
-              :placeholder="getFieldLabel(contact.fields[0])"
-              :required="contact.fields[0].required"
-              class="form-input"
-              size="lg"
-              variant="outline"
-            />
-
-            <UInput
-              v-model="formData.edad"
-              type="number"
-              :placeholder="getFieldLabel(contact.fields[1])"
-              :required="contact.fields[1].required"
-              :min="contact.fields[1].min"
-              :max="contact.fields[1].max"
-              class="form-input"
-              size="lg"
-              variant="outline"
-            />
-
-            <UInput
-              v-model="formData.email"
-              type="email"
-              :placeholder="getFieldLabel(contact.fields[2])"
-              :required="contact.fields[2].required"
-              class="form-input"
-              size="lg"
-              variant="outline"
-            />
-
-            <UInput
-              v-model="formData.telefono"
-              type="tel"
-              :placeholder="getFieldLabel(contact.fields[3])"
-              :required="contact.fields[3].required"
-              class="form-input"
-              size="lg"
-              variant="outline"
-            />
-
-            <UTextarea
-              v-if="contact.fields[4]"
-              v-model="formData.mensaje"
-              :placeholder="getFieldLabel(contact.fields[4])"
-              :required="contact.fields[4].required"
-              class="form-textarea"
-              :rows="4"
-              size="lg"
-              variant="outline"
-            />
+            <!-- Renderizar campos dinámicamente -->
+            <template v-for="field in contact.fields" :key="field.name">
+              <!-- Textarea para campos de tipo textarea -->
+              <UTextarea
+                v-if="field.type === 'textarea'"
+                v-model="formData[field.name]"
+                :placeholder="getFieldPlaceholder(field)"
+                :required="field.required"
+                class="form-textarea"
+                :rows="4"
+                size="lg"
+                variant="outline"
+              />
+              <!-- Input para otros tipos de campo -->
+              <UInput
+                v-else
+                v-model="formData[field.name]"
+                :type="field.type"
+                :placeholder="getFieldPlaceholder(field)"
+                :required="field.required"
+                :min="field.min"
+                :max="field.max"
+                :class="field.type === 'textarea' ? 'form-textarea' : 'form-input'"
+                size="lg"
+                variant="outline"
+              />
+            </template>
 
             <!-- Botón de envío -->
             <UButton
