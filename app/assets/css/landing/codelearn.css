@@ -278,12 +278,37 @@
 
 /* Dark Text Sections - Consolidates dark-cta and simple-text sections */
 :deep(.dark-text-section) {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
   padding: 0 !important;
 }
 
 :deep(.dark-text-section > *) {
   padding: 4rem 2rem !important;
+}
+
+/* More specific selector for benefits section */
+:deep(.benefits-section.dark-text-section) {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+}
+
+/* Gray background for benefits section */
+:deep(.gray-text-section) {
+  background: #f9fafb !important;
+  padding: 0 !important;
+}
+
+:deep(.benefits-section.gray-text-section) {
+  background: #f9fafb !important;
+}
+
+/* Gradient background for benefits section */
+:deep(.gradient-text-section) {
+  background: linear-gradient(to bottom right, #f0fdf4, #dcfce7) !important;
+  padding: 0 !important;
+}
+
+:deep(.benefits-section.gradient-text-section) {
+  background: linear-gradient(to bottom right, #f0fdf4, #dcfce7) !important;
 }
 
 :deep(.dark-text-section h1) {
@@ -418,6 +443,25 @@
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   text-align: center;
   padding: 2rem 0 0 0 !important;
+  position: relative;
+}
+
+/* Overlay fosc només per les seccions amb background_image */
+:deep(.hero-section[style*="background-image"])::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Assegurar que el contingut estigui per damunt de l'overlay */
+:deep(.hero-section[style*="background-image"] > *) {
+  position: relative;
+  z-index: 2;
 }
 
 /* Override UPageSection internal padding */
@@ -433,39 +477,47 @@
   margin-bottom: 0 !important;
 }
 
-/* Hero Title */
-:deep(.hero-section h1) {
-  font-size: 1.75rem;
-  font-weight: bold;
+/* Hero Title - Most specific selectors to override all other styles */
+:deep(.hero-section h1),
+:deep(.hero-section.dark-text-section h1),
+:deep(.dark-text-section.hero-section h1) {
+  font-size: 2rem !important;
+  font-weight: bold !important;
   color: white !important;
-  margin: 0rem 15rem 1.5rem 15rem;
-  line-height: 1.2;
+  margin: 0rem 15rem 1.5rem 15rem !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  max-width: none !important;
 }
 
 @media (min-width: 640px) {
-  :deep(.hero-section h1) {
-    font-size: 2rem;
+  :deep(.hero-section h1),
+  :deep(.hero-section.dark-text-section h1),
+  :deep(.dark-text-section.hero-section h1) {
+    font-size: 2.5rem !important;
   }
 }
 
 @media (min-width: 1024px) {
-  :deep(.hero-section h1) {
-    font-size: 2.5rem;
+  :deep(.hero-section h1),
+  :deep(.hero-section.dark-text-section h1),
+  :deep(.dark-text-section.hero-section h1) {
+    font-size: 3rem !important;
   }
 }
 
 /* Hero Description */
 :deep(.hero-section p) {
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: normal;
-  color: #d1d5db !important;
+  color: #ffffff !important;
   line-height: 1.6;
   margin: 0rem 17rem 2.5rem 17rem;
 }
 
 @media (min-width: 640px) {
   :deep(.hero-section p) {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -524,12 +576,18 @@
 }
 
 :deep(.horizontal-image-container img) {
-  width: 100%;
+  width: 80% !important; /* 20% smaller than original */
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  box-shadow: none;
   filter: none !important;
   backdrop-filter: none !important;
+}
+
+/* More specific rule for horizontal section images */
+:deep(.horizontal-section .horizontal-image-container img) {
+  width: 80% !important; /* 20% smaller than original */
+  max-width: 80% !important;
 }
 
 /* Text content styling for horizontal sections */
@@ -612,8 +670,8 @@
 :deep(.horizontal-image-container img) {
   width: 100%;
   height: auto;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  box-shadow: none;
   filter: none !important;
   backdrop-filter: none !important;
 }
@@ -745,6 +803,7 @@
 /* Benefits text content (left column) */
 :deep(.benefits-text-content) {
   padding-right: 2rem;
+  padding-left: 1.5rem;  /* Add left padding to match horizontal sections */
   text-align: left;
 }
 
@@ -758,7 +817,7 @@
 }
 
 :deep(.benefits-subtitle) {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #1f2937;
   margin-bottom: 2rem;
@@ -774,9 +833,23 @@
   text-align: left;
 }
 
+/* Benefits section with dark background */
+:deep(.dark-text-section .benefits-main-title) {
+  color: white !important;
+}
+
+:deep(.dark-text-section .benefits-subtitle) {
+  color: white !important;
+}
+
+:deep(.dark-text-section .benefits-description) {
+  color: #d1d5db !important;
+}
+
 /* Timeline container (right column) */
 :deep(.benefits-timeline-container) {
   padding-left: 2rem;
+  padding-right: 1.5rem;  /* Add right padding for consistency */
   text-align: left;
 }
 
@@ -790,8 +863,8 @@
 
 /* Reducir espaciado entre elementos del timeline */
 :deep(.benefits-section .UTimeline li) {
-  margin-bottom: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+  margin-bottom: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
 
 :deep(.benefits-section .UTimeline li:last-child) {
@@ -801,12 +874,12 @@
 
 /* Reducir espaciado interno de cada item del timeline */
 :deep(.benefits-section .UTimeline .relative) {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.25rem !important;
 }
 
 /* Reducir el gap entre el contenido de texto y el siguiente elemento */
 :deep(.benefits-section .ml-4) {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.25rem !important;
 }
 
 /* Timeline item styling with more specific selectors */
@@ -897,17 +970,31 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   :deep(.benefits-text-content) {
-    padding-right: 0;
+    padding-right: 1.5rem;  /* Keep right padding on tablet */
+    padding-left: 1.5rem;   /* Keep left padding on tablet */
     text-align: center;
     margin-bottom: 2rem;
   }
 
   :deep(.benefits-timeline-container) {
-    padding-left: 0;
+    padding-left: 1.5rem;   /* Keep left padding on tablet */
+    padding-right: 1.5rem;  /* Keep right padding on tablet */
   }
 
   :deep(.benefits-main-title) {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :deep(.benefits-text-content) {
+    padding-right: 1rem;  /* Smaller padding on mobile */
+    padding-left: 1rem;   /* Smaller padding on mobile */
+  }
+
+  :deep(.benefits-timeline-container) {
+    padding-left: 1rem;   /* Smaller padding on mobile */
+    padding-right: 1rem;  /* Smaller padding on mobile */
   }
 }
 
@@ -1141,11 +1228,13 @@
 /* CONSOLIDATED MEDIA QUERIES */
 /* =================================================================== */
 
-/* Mobile: Make horizontal images flatter */
+/* Mobile: Make horizontal images responsive instead of cropped */
 @media (max-width: 768px) {
   :deep(.horizontal-image-container img) {
-    height: 400px !important;
-    object-fit: cover !important;
+    height: auto !important;  /* Let image maintain aspect ratio */
+    max-height: 300px !important;  /* Set reasonable max height */
+    object-fit: contain !important;  /* Show full image without cropping */
+    width: 100% !important;
   }
 
   /* Horizontal sections mobile adjustments */
@@ -1170,10 +1259,15 @@
     padding: 0;
   }
 
-  /* Hero title mobile */
-  :deep(.hero-section h1) {
-    font-size: 1.75rem;
-    margin: 0 1rem 1.5rem 1rem;
+  /* Hero title mobile - ensure proper centering */
+  :deep(.hero-section h1),
+  :deep(.hero-section.dark-text-section h1),
+  :deep(.dark-text-section.hero-section h1) {
+    font-size: 1.75rem !important;
+    margin: 0 auto 1.5rem auto !important;  /* Use auto margins for perfect centering */
+    text-align: center !important;
+    max-width: calc(100% - 2rem) !important;  /* Prevent overflow */
+    padding: 0 1rem !important;  /* Add padding instead of side margins */
   }
 
   /* Hero description mobile */
@@ -1240,5 +1334,159 @@
 @media (min-width: 1024px) {
   :deep(.hero-section h1) {
     font-size: 2.5rem;
+  }
+}
+
+/* Press Section Styles - Force gray background and remove image borders */
+:deep(.press-section),
+:deep(.press-section.gray-text-section),
+:deep(section.press-section),
+:deep(section.press-section.gray-text-section) {
+  background-color: #f9fafb !important;
+  background: #f9fafb !important;
+  padding: 0 !important;
+}
+
+:deep(.press-section > *),
+:deep(section.press-section > *) {
+  padding: 1rem 2rem !important; /* Very reduced padding */
+  background-color: #f9fafb !important;
+  background: #f9fafb !important;
+}
+
+/* Remove borders and shadows from press section images */
+:deep(.press-section img),
+:deep(.press-section .hero-image-container img) {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+@media (max-width: 768px) {
+  :deep(.press-section > *),
+  :deep(section.press-section > *) {
+    padding: 0.5rem 1rem !important; /* Even smaller on mobile */
+    background-color: #f9fafb !important;
+  }
+}
+
+/* =================================================================== */
+/* HERO SECTION FINAL OVERRIDES - Must be at end for highest precedence */
+/* =================================================================== */
+
+/* Hero section title - final override with maximum specificity */
+:deep(.hero-section h1),
+:deep(.hero-section.dark-text-section h1),
+:deep(.dark-text-section.hero-section h1),
+:deep(section.hero-section.dark-text-section h1) {
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  color: white !important;
+  margin: 0rem 15rem 1.5rem 15rem !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  max-width: none !important;
+}
+
+/* Hero section responsive overrides */
+@media (min-width: 640px) {
+  :deep(.hero-section h1),
+  :deep(.hero-section.dark-text-section h1),
+  :deep(.dark-text-section.hero-section h1),
+  :deep(section.hero-section.dark-text-section h1) {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  :deep(.hero-section h1),
+  :deep(.hero-section.dark-text-section h1),
+  :deep(.dark-text-section.hero-section h1),
+  :deep(section.hero-section.dark-text-section h1) {
+    font-size: 3rem !important;
+  }
+}
+
+/* =================================================================== */
+/* PRESS SECTION FINAL OVERRIDES - Absolute last to force gray background */
+/* =================================================================== */
+
+/* Force gray background with maximum specificity */
+:deep(.press-section),
+:deep(.press-section.gray-text-section),
+:deep(section.press-section),
+:deep(section.press-section.gray-text-section),
+:deep(.UPageSection.press-section),
+:deep(.UPageSection.press-section.gray-text-section) {
+  background-color: #f9fafb !important;
+  background: #f9fafb !important;
+}
+
+:deep(.press-section > *),
+:deep(section.press-section > *),
+:deep(.UPageSection.press-section > *) {
+  background-color: #f9fafb !important;
+  background: #f9fafb !important;
+  padding: 1rem 2rem !important;
+}
+
+/* Final press section image cleanup - override all image styles */
+:deep(.press-section img),
+:deep(.press-section .hero-image-container img),
+:deep(section.press-section img),
+:deep(.press-section .rounded-lg),
+:deep(.press-section .shadow-xl) {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Remove specific Tailwind classes from press section images */
+:deep(.press-section .rounded-lg) {
+  border-radius: 0 !important;
+}
+
+:deep(.press-section .shadow-xl) {
+  box-shadow: none !important;
+}
+
+/* Ultimate press section background override - targets any element */
+* .press-section,
+*[class*="press-section"],
+.press-section,
+section.press-section {
+  background-color: #f9fafb !important;
+  background: #f9fafb !important;
+}
+
+* .press-section > *,
+*[class*="press-section"] > *,
+.press-section > *,
+section.press-section > * {
+  background-color: #f9fafb !important;
+  background: #f9fafb !important;
+}
+
+/* =================================================================== */
+/* MOBILE HERO TITLE CENTERING - FINAL OVERRIDE */
+/* =================================================================== */
+
+@media (max-width: 768px) {
+  /* Ultimate mobile hero title centering with maximum specificity */
+  :deep(.hero-section h1),
+  :deep(.hero-section.dark-text-section h1),
+  :deep(.dark-text-section.hero-section h1),
+  :deep(section.hero-section h1),
+  :deep(section.hero-section.dark-text-section h1) {
+    font-size: 1.75rem !important;
+    margin: 0 auto 1.5rem auto !important;
+    text-align: center !important;
+    max-width: none !important;
+    padding: 0 1rem !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    display: block !important;
   }
 }

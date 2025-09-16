@@ -67,17 +67,24 @@ const sectionUI = computed(() => props.ui || {})
 // Simple image container class
 const imageContainerClass = computed(() => 'hero-image-container')
 
-// Background image style
+// Background image style and press section gray background
 const backgroundImageStyle = computed(() => {
+  const styles: Record<string, string> = {}
+
   if (props.section.background_image) {
-    return {
-      backgroundImage: `url('${resolveAssetUrl(props.section.background_image)}')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }
+    styles.backgroundImage = `url('${resolveAssetUrl(props.section.background_image)}')`
+    styles.backgroundSize = 'cover'
+    styles.backgroundPosition = 'center'
+    styles.backgroundRepeat = 'no-repeat'
   }
-  return {}
+
+  // Force gray background for press sections via inline style
+  if (props.class?.includes('press-section')) {
+    styles.backgroundColor = '#e5e7eb'  // Darker gray so you can clearly see it
+    styles.background = '#e5e7eb'
+  }
+
+  return styles
 })
 
 // Computed properties para rutas de imágenes
@@ -94,6 +101,22 @@ const singleImageSrc = computed(() =>
     ? resolveAssetUrl(props.section.image)
     : ''
 )
+
+// Combined class logic for background support
+const combinedClass = computed(() => {
+  const classes = []
+  if (props.class) classes.push(props.class)
+
+  // Don't apply dark-text-section to hero sections - they have their own styles
+  const isHeroSection = props.class?.includes('hero-section')
+
+  const bg = props.section.background
+  if (bg === 'dark' && !isHeroSection) classes.push('dark-text-section')
+  else if (bg === 'gray') classes.push('gray-text-section')
+  else if (bg === 'gradient') classes.push('gradient-text-section')
+
+  return classes.join(' ')
+})
 </script>
 
 <template>
@@ -101,7 +124,7 @@ const singleImageSrc = computed(() =>
     :headline="section.headline"
     :links="sectionLinks"
     :ui="sectionUI"
-    :class="class"
+    :class="combinedClass"
     :style="backgroundImageStyle"
   >
     <!-- Slot para título con HTML e imágenes -->

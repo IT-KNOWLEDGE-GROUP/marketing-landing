@@ -1,18 +1,27 @@
 <template>
-  <footer class="landing-footer bg-primary text-white py-4">
+  <footer class="landing-footer bg-primary py-4">
     <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-8">
         <!-- Address -->
-        <div class="flex items-center gap-2" v-if="footer.address">
+        <a
+          href="https://maps.app.goo.gl/fhhsF38j2VsMZ3YR8"
+          target="_blank"
+          class="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          v-if="footer.address"
+        >
           <UIcon name="i-lucide-map-pin" class="w-5 h-5 flex-shrink-0" />
           <span class="text-sm font-medium">{{ footer.address }}</span>
-        </div>
+        </a>
 
         <!-- Phone -->
-        <div class="flex items-center gap-2" v-if="footer.phone">
+        <a
+          :href="`tel:${footer.phone}`"
+          class="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          v-if="footer.phone"
+        >
           <UIcon name="i-lucide-phone" class="w-5 h-5 flex-shrink-0" />
           <span class="text-sm font-medium">Tlf. {{ footer.phone }}</span>
-        </div>
+        </a>
 
         <!-- Email -->
         <div class="flex items-center gap-2" v-if="footer.email">
@@ -40,11 +49,14 @@ const props = defineProps<Props>()
 
 <style scoped>
 .landing-footer {
-  background-color: #8BE63A; /* Verde similar a la imagen */
+  background-color: #8BE63A !important; /* Verde original */
+  color: #374151 !important; /* Texto gris oscuro */
 }
 
-.landing-footer .text-white {
-  color: #1a1a1a; /* Texto oscuro para mejor contraste sobre verde */
+.landing-footer span,
+.landing-footer div,
+.landing-footer a {
+  color: #374151 !important; /* Texto gris oscuro para todos los elementos */
 }
 
 /* Responsive adjustments */

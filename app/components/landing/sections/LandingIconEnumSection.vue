@@ -78,13 +78,26 @@ const timelineUI = {
   item: 'pb-2', // Reducir padding bottom de cada item
   wrapper: 'mb-2' // Reducir margen bottom del wrapper
 }
+
+// Combined class logic
+const combinedClass = computed(() => {
+  const classes = []
+  if (props.class) classes.push(props.class)
+
+  const bg = props.section.background
+  if (bg === 'dark') classes.push('dark-text-section')
+  else if (bg === 'gray') classes.push('gray-text-section')
+  else if (bg === 'gradient') classes.push('gradient-text-section')
+
+  return classes.join(' ')
+})
 </script>
 
 <template>
   <UPageSection
     :links="sectionLinks"
     :ui="sectionUI"
-    :class="class"
+    :class="combinedClass"
   >
     <template #title>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">

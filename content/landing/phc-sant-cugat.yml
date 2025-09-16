@@ -9,6 +9,15 @@ header:
   languages: []
 
 sections:
+  # - type: 'vertical'
+  #   class: 'hero-section'
+  #   title: "**Acord exclusiu PHC Sant Cugat:**<br/> 60% descompte en la matricula durant setembre"
+  #   description: 'Codelearn és una extraescolar de pensament computacional, programació, robòtica, electrònica i molt més. Hem desenvolupat un mètode que converteix l’aprenentatge de la programació en un joc i anima els alumnes a esdevenir creadors de tecnologia.'
+  #   background: 'dark'
+
+  #   background_image: '/images/landing-sant-cugat/codelearn-web.webp'
+  #   textAlign: 'center'
+
   - type: 'vertical'
     class: 'hero-section'
     title: '**Acord exclusiu PHC Sant Cugat:**<br/> 60% descompte fins final de setembre'
@@ -22,44 +31,47 @@ sections:
 
   - type: 'horizontal'
     class: 'horizontal-section'
-    title: "No n'hi ha prou en fer esport"
-    content: "Els experts ho diuen clar: el risc número 1 per als joves catalans no és l'alcohol ni les drogues. És la salut mental. Estats d'ànim baixos, ansietat, pèrdua de confiança, fins i tot ideacions suïcides. I la tecnologia hi juga un paper clau. No perquè sigui dolenta, sinó perquè **la majoria dels joves només la consumeixen**."
-    footer: "Quan només consumeixes, s'altera el circuit de la recompensa. Et compares. Et buides. Et sents menys. **Però quan fas servir la tecnologia per crear, la cosa canvia.**"
-    layout: 'text-only'
-    background: 'white'
-
-  - type: 'vertical'
-    class: 'cta-band-section'
-    title: "\"La programació és una habilitat essencial per descobrir els secrets de l'univers o tenir èxit al segle XXI\" - Stephen Hawking"
-    description: 'Codelearn no només ensenya a programar. Desenvolupa el pensament computacional, la creativitat i les habilitats de resolució de problemes que els teus fills utilitzaran tota la vida. Tot això jugant i descobrint un univers de personatges fascinants.'
-    background_image: '/images/landing-sant-cugat/reference/student-robot-banner.png'
-    textAlign: 'center'
+    title: "El teu gimnàs per a la ment"
+    content: "Codelearn és una escola que neix amb la voluntat d'ensenyar i difondre el pensament computacional i la programació a les noves generacions. El món actual presenta reptes molt importants per als nostres joves i és la nostra responsabilitat dotar-los dels coneixements i habilitats claus perquè puguin tenir èxit en un present i futur cada vegada més competitiu."
+    image:
+      src: '/images/landing-sant-cugat/personatges_web.webp'
+      alt: 'Personatges codelearn'
+    layout: 'image-right'
+    background: 'dark'
 
   - type: 'icon-enum'
     class: 'benefits-section'
-    title: 'Acord exclusiu PHC Sant Cugat'
-    subtitle: 'Hem signat un acord exclusiu amb Codelearn. Els jugadors del PHC Sant Cugat podreu gaudir de:'
+    title: 'El pensament computacional'
+    subtitle: 'El pensament computacional és un conjunt de tècniques que ens ajuden a resoldre problemes de qualsevol tipus. Afavoreix el desenvolupament del pensament abstracte i el pensament lògic, estimula la creativitat i ens ajuda a desenvolupar competències transversals a partir del treball per projectes.'
     items:
-      - icon: 'i-lucide-target'
-        title: '60% descompte matrícula'
-        content: "Estalvia més de la meitat del cost normal. Oferta vàlida només fins final de setembre."
-      - icon: 'i-lucide-gift'
-        title: 'Prova gratuïta per tu i amic'
-        content: 'Una prova gratuïta per a jugadors/jugadores i un amic. Sense compromís.'
       - icon: 'i-lucide-brain'
-        title: 'Pensament computacional'
-        content: 'Desenvolupem les habilitats de resolució de problemes que serviran per a tota la vida, no només per a la tecnologia.'
-      - icon: 'i-lucide-gamepad-2'
-        title: 'El gimnàs de la seva ment'
-        content: "Aprendre jugant amb un univers de personatges fascinants que converteix cada lliçó en una aventura emocionant."
+        title: 'Desenvolupament del pensament algorítmic'
+        content: "El pensament algorítmic no és només una competència matemàtica, sinó que es pot aplicar a qualsevol àmbit de la vida. Aprendre a programar ens ensenya a pensar."
+      - icon: 'i-lucide-target'
+        title: 'Desenvolupament de competències del futur'
+        content: 'Vivim envoltats de tecnologia. D’aquí a pocs anys, hi haurà molta diferència entre aquelles persones que sàpiguen programar i aquelles que no es puguin comunicar amb les màquines.'
+      - icon: 'i-lucide-lightbulb'
+        title: 'Desenvolupament de la creativitat'
+        content: 'L’educació STEAM anima els infants a experimentar, descobrir i crear. La programació i la robòtica estimulen la creativitat dels nens i els ofereixen eines útils per dur a terme els seus propis projectes.'
+      - icon: 'i-lucide-triangle-alert'
+        title: 'Desenvolupament del pensament crític'
+        content: "Els nens que aprenen a programar també desenvolupen un esperit crític, ja que han de seguir diferents lògiques i trobar constantment diferents maneres per resoldre problemes de manera eficaç."
+    background: 'gray'
 
-  - type: 'horizontal'
-    class: 'horizontal-section'
-    title: 'Més que programar: preparar-los per al futur'
-    content: "A Codelearn, cada estudiant avança al seu propi ritme a través d'una plataforma gamificada online. Desenvolupen pensament abstracte, lògica i creativitat mentre es diverteixen creant projectes reals que els omplen d'orgull."
-    footer: "Perquè l'aprenentatge ha de ser divertit, personalitzat i prepararlos per comunicar-se amb les màquines del segle XXI."
-    layout: 'text-only'
-    background: 'white'
+  # - type: 'horizontal'
+  #   class: 'horizontal-section'
+  #   title: 'Més que programar: preparar-los per al futur'
+  #   content: "A Codelearn, cada estudiant avança al seu propi ritme a través d'una plataforma gamificada online. Desenvolupen pensament abstracte, lògica i creativitat mentre es diverteixen creant projectes reals que els omplen d'orgull."
+  #   footer: "Perquè l'aprenentatge ha de ser divertit, personalitzat i prepararlos per comunicar-se amb les màquines del segle XXI."
+  #   layout: 'text-only'
+  #   background: 'white'
+
+  # - type: 'vertical'
+  #   class: 'cta-band-section'
+  #   title: "\"La programació és una habilitat essencial per descobrir els secrets de l'univers o tenir èxit al segle XXI\" - Stephen Hawking"
+  #   description: 'Codelearn no només ensenya a programar. Desenvolupa el pensament computacional, la creativitat i les habilitats de resolució de problemes que els teus fills utilitzaran tota la vida. Tot això jugant i descobrint un univers de personatges fascinants.'
+  #   background_image: '/images/landing-sant-cugat/reference/student-robot-banner.png'
+  #   textAlign: 'center'
 
   - type: 'contact'
     class: 'contact-section'
@@ -91,6 +103,18 @@ sections:
     buttons:
       submit: 'Enviar'
     webhook_url: 'https://hook.eu2.make.com/rcx3c0ilw6lh8b9e0krt1wtdiem85bf8'
+    image:
+      src: '/images/landing-sant-cugat/recullpremsa2.webp'
+      alt: 'Recull de premsa Codelearn'
+    layout: 'image-down'
+    background: 'dark'
+
+  - type: 'vertical'
+    class: 'press-section'
+    image:
+      desktop: '/images/landing-sant-cugat/recullpremsa2.webp'
+      alt: 'Recull de premsa Codelearn'
+    textAlign: 'center'
     background: 'gray'
 
   - type: 'acordeon'
