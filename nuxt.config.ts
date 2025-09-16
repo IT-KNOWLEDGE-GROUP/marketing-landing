@@ -76,18 +76,8 @@ export default defineNuxtConfig({
     id: 'G-K082FK3MGR'
   },
 
-  // Configure image optimization
+  // Disable IPX image optimization for GitHub Pages
   image: {
-    domains: ['it-knowledge-group.github.io'],
-    format: ['webp', 'png', 'jpg'],
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280
-    },
-    quality: 80,
-    provider: process.env.NODE_ENV === 'production' ? 'static' : 'ipx'
+    provider: 'none'
   }
 })
