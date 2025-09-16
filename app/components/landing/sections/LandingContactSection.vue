@@ -66,7 +66,10 @@ const submitForm = async () => {
       // Map form data using the 'field' names for webhook
       const webhookData: Record<string, string | number> = {}
       props.contact.fields.forEach((field) => {
-        webhookData[field.field] = formData.value[field.name]
+        const value = formData.value[field.name]
+        if (value !== null && value !== undefined) {
+          webhookData[field.field] = value
+        }
       })
 
       const response = await fetch(props.contact.webhook_url, {
