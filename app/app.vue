@@ -12,7 +12,12 @@ useHead({
     { rel: 'icon', href: '/favicon.ico' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-    { rel: 'dns-prefetch', href: 'https://it-knowledge-group.github.io' }
+    { rel: 'dns-prefetch', href: 'https://it-knowledge-group.github.io' },
+    // Load Google Fonts asynchronously to avoid blocking render
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', media: 'print', onload: 'this.media="all"' },
+    // Preload critical Google Fonts to reduce critical path latency
+    { rel: 'preload', href: 'https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
+    { rel: 'preload', href: 'https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiJ-Ek-_EeA.woff2', as: 'font', type: 'font/woff2', crossorigin: '' }
   ],
   htmlAttrs: {
     lang: 'en'
