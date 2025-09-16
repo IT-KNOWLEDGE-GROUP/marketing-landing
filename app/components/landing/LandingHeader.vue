@@ -44,12 +44,31 @@ const headerUI = computed(() => ({
   border: 'border-[var(--landing-border-default)]',
   text: 'text-[var(--ui-text-primary)]',
   wrapper: 'relative', // Quitar sticky positioning
+  // Configuración específica para el panel móvil
+  panel: {
+    background: 'bg-white',
+    base: 'bg-white',
+    divide: 'divide-gray-200',
+    padding: 'p-4',
+    body: 'bg-white'
+  },
   ...props.ui
 }))
 </script>
 
 <template>
-  <UHeader :ui="headerUI" :class="['bg-white', 'static', props.class]" to="#">
+  <UHeader
+    :ui="headerUI"
+    :class="['bg-white', 'static', props.class]"
+    to="#"
+    :links="[
+      { label: 'Inici', to: '#inici' },
+      { label: 'El teu gimnàs', to: '#el-teu-gimnas' },
+      { label: 'Pensament computacional', to: '#pensament-computacional' },
+      { label: 'Contacte', to: '#contacto' },
+      { label: 'Preguntes', to: '#preguntes' }
+    ]"
+  >
     <!-- Logo Slot -->
     <template #title>
       <div class="flex items-center gap-4">
@@ -73,18 +92,19 @@ const headerUI = computed(() => ({
 
     <!-- Right side actions -->
     <template #right>
-      <!-- CTA Button -->
+      <!-- CTA Button - hidden on mobile, shown in panel -->
       <UButton
         :to="header.cta_link"
         color="primary"
         variant="solid"
         size="sm"
+        class="hidden lg:flex"
       >
         {{ header.cta_text }}
       </UButton>
 
-      <!-- Language Flags -->
-      <div class="flex items-center gap-2">
+      <!-- Language Flags - hidden on mobile -->
+      <div class="hidden lg:flex items-center gap-2">
         <NuxtImg
           v-for="lang in languageFlags"
           :key="lang.code"
@@ -97,5 +117,55 @@ const headerUI = computed(() => ({
         />
       </div>
     </template>
+
   </UHeader>
 </template>
+
+<style scoped>
+/* Estilos para el menú móvil del UHeader */
+:deep([data-headlessui-state="open"]) {
+  background-color: white !important;
+}
+
+:deep(.fixed.inset-0) {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+:deep(.relative.h-full) {
+  background-color: white !important;
+}
+
+:deep(.bg-white) {
+  background-color: white !important;
+}
+
+/* Panel específico del UHeader */
+:deep(.absolute.right-0) {
+  background-color: white !important;
+}
+
+:deep(.w-screen.max-w-sm) {
+  background-color: white !important;
+}
+
+/* Enlaces del menú */
+:deep(.divide-y a) {
+  color: #374151 !important;
+  font-weight: 500 !important;
+  background-color: transparent !important;
+}
+
+:deep(.divide-y a:hover) {
+  background-color: #f9fafb !important;
+  color: #8BE63A !important;
+}
+
+/* Forzar fondo blanco en todos los elementos del panel */
+:deep(.relative.flex.h-full.flex-col) {
+  background-color: white !important;
+}
+
+:deep(.flex-1.overflow-y-auto) {
+  background-color: white !important;
+}
+</style>

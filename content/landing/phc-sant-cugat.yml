@@ -20,6 +20,7 @@ sections:
 
   - type: 'vertical'
     class: 'hero-section'
+    id: 'inici'
     title: '**Acord exclusiu PHC Sant Cugat:**<br/> 60% descompte fins final de setembre'
     description: 'Hem signat un acord exclusiu amb Codelearn. Els jugadors i jugadores del PHC Sant Cugat podeu aprendre programació, IA i robòtica amb un 60% de descompte + prova gratuïta per a tu i un amic.'
     image:
@@ -31,16 +32,19 @@ sections:
 
   - type: 'horizontal'
     class: 'horizontal-section'
+    id: 'el-teu-gimnas'
     title: "El teu gimnàs per a la ment"
-    content: "Codelearn és una escola que neix amb la voluntat d'ensenyar i difondre el pensament computacional i la programació a les noves generacions. El món actual presenta reptes molt importants per als nostres joves i és la nostra responsabilitat dotar-los dels coneixements i habilitats claus perquè puguin tenir èxit en un present i futur cada vegada més competitiu."
+    content: "Codelearn és una escola que neix amb la voluntat d'ensenyar i difondre el pensament computacional i la programació a les noves generacions. El món actual presenta reptes molt importants per als nostres joves i és la nostra responsabilitat dotar-los dels coneixements i habilitats claus perquè puguin tenir èxit en un present i futur cada vegada més competitiu.</br></br>La majoria dels joves només consumeixen la tecnologia cosa que els ocasiona problemes. Nosaltres els ajudem a convertir-se en creadors!</br></br>Els nostres alumnes aprenen a programar creant videojocs, aplicacions mòbils, pàgines web, robots i molt més. Tot això mentre es diverteixen i desenvolupen habilitats que els seran útils tota la vida."
+    footer: "Prou consum passiu de pantalla, comença a crear de forma activa!"
     image:
-      src: '/images/landing-sant-cugat/personatges_web.webp'
+      src: '/images/landing-sant-cugat/personatges_web_small.webp'
       alt: 'Personatges codelearn'
     layout: 'image-right'
     background: 'dark'
 
   - type: 'icon-enum'
     class: 'benefits-section'
+    id: 'pensament-computacional'
     title: 'El pensament computacional'
     subtitle: 'El pensament computacional és un conjunt de tècniques que ens ajuden a resoldre problemes de qualsevol tipus. Afavoreix el desenvolupament del pensament abstracte i el pensament lògic, estimula la creativitat i ens ajuda a desenvolupar competències transversals a partir del treball per projectes.'
     items:
@@ -49,7 +53,7 @@ sections:
         content: "El pensament algorítmic no és només una competència matemàtica, sinó que es pot aplicar a qualsevol àmbit de la vida. Aprendre a programar ens ensenya a pensar."
       - icon: 'i-lucide-target'
         title: 'Desenvolupament de competències del futur'
-        content: 'Vivim envoltats de tecnologia. D’aquí a pocs anys, hi haurà molta diferència entre aquelles persones que sàpiguen programar i aquelles que no es puguin comunicar amb les màquines.'
+        content: 'D’aquí a pocs anys, hi haurà molta diferència entre aquelles persones que sàpiguen programar i aquelles que no es puguin comunicar amb les màquines. Aquestes son les competències millor pagades del món avui en dia! '
       - icon: 'i-lucide-lightbulb'
         title: 'Desenvolupament de la creativitat'
         content: 'L’educació STEAM anima els infants a experimentar, descobrir i crear. La programació i la robòtica estimulen la creativitat dels nens i els ofereixen eines útils per dur a terme els seus propis projectes.'
@@ -119,6 +123,7 @@ sections:
 
   - type: 'acordeon'
     class: 'faq-section'
+    id: 'preguntes'
     title: "Preguntes freqüents sobre l'oferta"
     items:
       - question: "Fins quan és vàlida l'oferta del 60%?"

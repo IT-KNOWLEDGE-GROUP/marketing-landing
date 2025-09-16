@@ -556,7 +556,7 @@
 }
 
 :deep(.horizontal-section > *) {
-  padding: 3.5rem 2rem !important;
+  padding: 2rem 2rem !important;  /* Same as hero section top padding */
 }
 
 /* Horizontal sections use the base layout */
@@ -576,7 +576,7 @@
 }
 
 :deep(.horizontal-image-container img) {
-  width: 80% !important; /* 20% smaller than original */
+  width: 100% !important; /* Original size for desktop */
   height: auto;
   border-radius: 0px;
   box-shadow: none;
@@ -586,8 +586,10 @@
 
 /* More specific rule for horizontal section images */
 :deep(.horizontal-section .horizontal-image-container img) {
-  width: 80% !important; /* 20% smaller than original */
-  max-width: 80% !important;
+  width: 100% !important; /* Original size for desktop */
+  max-width: 350px !important; /* Limit to 350px width */
+  margin: 0 auto !important; /* Center the image */
+  display: block !important; /* Needed for margin auto to work */
 }
 
 /* Text content styling for horizontal sections */
@@ -598,7 +600,7 @@
 
 /* Title styling for horizontal sections */
 :deep(.horizontal-title) {
-  font-size: 2.5rem;
+  font-size: 2rem;  /* Same as contact title */
   font-weight: bold;
   color: #1f2937;
   margin-bottom: 1.5rem;
@@ -650,7 +652,7 @@
 
 /* Specific overrides for first horizontal section to prevent style conflicts */
 :deep(.horizontal-section .horizontal-title) {
-  font-size: 2.5rem !important;
+  font-size: 2rem !important;  /* Same as contact title */
   font-weight: bold !important;
   color: #1f2937 !important;
   margin-bottom: 1.5rem !important;
@@ -797,7 +799,7 @@
 
 /* Override UPageSection internal padding for Benefits */
 :deep(.benefits-section > *) {
-  padding: 4rem 2rem !important;
+  padding: 2rem 2rem !important;  /* Same as hero section top padding */
 }
 
 /* Benefits text content (left column) */
@@ -808,7 +810,7 @@
 }
 
 :deep(.benefits-main-title) {
-  font-size: 2.5rem;
+  font-size: 2rem;  /* Same as contact title */
   font-weight: bold !important;
   color: #1f2937;
   margin-bottom: 1.5rem;
@@ -982,7 +984,7 @@
   }
 
   :deep(.benefits-main-title) {
-    font-size: 2rem;
+    font-size: 2rem;  /* Same as contact title in all screen sizes */
   }
 }
 
@@ -1040,7 +1042,7 @@
   }
 
   :deep(.horizontal-title) {
-    font-size: 2rem;
+    font-size: 2rem;  /* Same as contact title in all screen sizes */
   }
 
   :deep(.horizontal-image-container) {
@@ -1049,9 +1051,6 @@
 }
 
 @media (max-width: 768px) {
-  :deep(.horizontal-section) {
-    padding: 2rem 0;
-  }
 
   :deep(.horizontal-text-content) {
     padding: 0 1rem;
@@ -1289,7 +1288,7 @@
 
   /* Benefits/Icon-enum text mobile */
   :deep(.benefits-main-title) {
-    font-size: 1.75rem;
+    font-size: 2rem;  /* Same as contact title in all screen sizes */
   }
 
   :deep(.benefits-subtitle) {
@@ -1298,12 +1297,11 @@
 
   /* Common title sizing mobile */
   :deep(.horizontal-title) {
-    font-size: 2rem;
+    font-size: 2rem;  /* Same as contact title in all screen sizes */
   }
 
   /* Section paddings mobile */
   :deep(.cta-band-section > *),
-  :deep(.benefits-section > *),
   :deep(.dark-cta-section > *),
   :deep(.codelearn-presentation-section > *),
   :deep(.playing-learning-section > *),
@@ -1311,6 +1309,12 @@
   :deep(.personalized-learning-section > *),
   :deep(.modalities-section > *) {
     padding: var(--section-padding-xs) !important;
+  }
+
+  /* Make horizontal-section and benefits-section have same mobile padding as hero */
+  :deep(.horizontal-section > *),
+  :deep(.benefits-section > *) {
+    padding: 2rem 1rem !important;  /* Same as hero section, less side padding for mobile */
   }
 }
 
@@ -1466,6 +1470,150 @@ section.press-section {
 section.press-section > * {
   background-color: #f9fafb !important;
   background: #f9fafb !important;
+}
+
+/* =================================================================== */
+/* MOBILE MENU HEADER OVERRIDE - Force white background */
+/* =================================================================== */
+
+/* Force white background for UHeader mobile menu */
+[data-headlessui-state="open"] {
+  background-color: white !important;
+}
+
+.fixed.inset-0.z-50 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.absolute.right-0.top-0.h-full.w-full.max-w-sm {
+  background-color: white !important;
+}
+
+.relative.flex.h-full.flex-col.bg-white {
+  background-color: white !important;
+}
+
+.flex-1.overflow-y-auto.px-6.py-6 {
+  background-color: white !important;
+}
+
+.divide-y.divide-gray-200 {
+  background-color: white !important;
+}
+
+.divide-y.divide-gray-200 > * {
+  background-color: white !important;
+}
+
+.divide-y a {
+  color: #374151 !important;
+  background-color: white !important;
+  font-weight: 500 !important;
+}
+
+.divide-y a:hover {
+  background-color: #f9fafb !important;
+  color: #8BE63A !important;
+}
+
+/* Universal white background for mobile panels */
+.sm\\:max-w-sm {
+  background-color: white !important;
+}
+
+/* SUPER AGGRESSIVE MOBILE MENU FIXES */
+/* Target any element that might be part of mobile menu */
+[role="dialog"] {
+  background-color: white !important;
+}
+
+[role="dialog"] * {
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+[role="dialog"] a {
+  color: #374151 !important;
+  background-color: white !important;
+  font-weight: 500 !important;
+  padding: 0.75rem 1rem !important;
+  display: block !important;
+}
+
+[role="dialog"] a:hover {
+  background-color: #f9fafb !important;
+  color: #8BE63A !important;
+}
+
+/* Target HeadlessUI specific elements */
+[data-headlessui-state] {
+  background-color: white !important;
+}
+
+[data-headlessui-state] * {
+  background-color: white !important;
+}
+
+/* Universal override for any fixed/absolute positioned elements */
+.fixed {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.absolute {
+  background-color: white !important;
+}
+
+/* Z-index high elements (likely modals/overlays) */
+.z-50, .z-40, .z-30 {
+  background-color: white !important;
+}
+
+.z-50 *, .z-40 *, .z-30 * {
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+/* NUCLEAR OPTION - Force ALL elements to white when menu might be open */
+body:has([data-headlessui-state="open"]) * {
+  background-color: white !important;
+}
+
+body:has([role="dialog"]) * {
+  background-color: white !important;
+}
+
+/* Force white on ANY element with these patterns */
+*[class*="slide"],
+*[class*="panel"],
+*[class*="menu"],
+*[class*="modal"],
+*[class*="overlay"],
+*[class*="drawer"] {
+  background-color: white !important;
+  color: #374151 !important;
+}
+
+/* Force white on common layout patterns */
+*[class*="fixed"],
+*[class*="absolute"],
+*[class*="inset"] {
+  background-color: white !important;
+}
+
+/* Any div that might be a mobile menu */
+div[class*="w-screen"],
+div[class*="max-w-sm"],
+div[class*="h-full"] {
+  background-color: white !important;
+}
+
+/* Links in any context */
+a {
+  color: #374151 !important;
+}
+
+a:hover {
+  color: #8BE63A !important;
 }
 
 /* =================================================================== */
