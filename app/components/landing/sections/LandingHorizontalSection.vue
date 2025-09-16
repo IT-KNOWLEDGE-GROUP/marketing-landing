@@ -95,7 +95,7 @@ const imageSrc = computed(() =>
             :src="imageSrc"
             :alt="section.image.alt || section.title"
             class="w-full rounded-lg shadow-lg"
-            loading="eager"
+            loading="lazy"
             format="webp"
             sizes="(max-width: 768px) 100vw, 896px"
           />
@@ -109,29 +109,38 @@ const imageSrc = computed(() =>
           ]"
         >
           <!-- Headline -->
-          <p v-if="section.headline" class="horizontal-headline">
+          <p
+            v-if="section.headline"
+            class="horizontal-headline"
+          >
             {{ section.headline }}
           </p>
 
           <!-- Título -->
-          <h2 v-html="processedTitle" class="horizontal-title" />
+          <h2
+            class="horizontal-title"
+            v-html="processedTitle"
+          />
 
           <!-- Descripción -->
           <p
             v-if="section.description"
-            v-html="processedDescription"
             class="horizontal-description"
+            v-html="processedDescription"
           />
 
           <!-- Contenido principal -->
           <p
             v-if="section.content"
-            v-html="processedContent"
             class="horizontal-content"
+            v-html="processedContent"
           />
 
           <!-- Lista de bullets -->
-          <ul v-if="section.bullets && section.bullets.length" class="horizontal-bullets">
+          <ul
+            v-if="section.bullets && section.bullets.length"
+            class="horizontal-bullets"
+          >
             <li
               v-for="(bullet, index) in section.bullets"
               :key="index"
@@ -144,12 +153,15 @@ const imageSrc = computed(() =>
           <!-- Footer text -->
           <p
             v-if="section.footer"
-            v-html="processedFooter"
             class="horizontal-footer"
+            v-html="processedFooter"
           />
 
           <!-- Botones -->
-          <div v-if="sectionLinks && sectionLinks.length" class="horizontal-buttons">
+          <div
+            v-if="sectionLinks && sectionLinks.length"
+            class="horizontal-buttons"
+          >
             <UButton
               v-for="(link, index) in sectionLinks"
               :key="index"

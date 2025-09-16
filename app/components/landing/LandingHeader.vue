@@ -117,7 +117,6 @@ const headerUI = computed(() => ({
         />
       </div>
     </template>
-
   </UHeader>
 </template>
 

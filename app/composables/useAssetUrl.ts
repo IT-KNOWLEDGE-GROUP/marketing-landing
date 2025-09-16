@@ -37,7 +37,7 @@ export const useAssetUrl = () => {
    * @param image - Image object that may contain desktop, mobile, src properties
    * @returns Processed image object with resolved URLs
    */
-  const resolveImageUrls = (image: any): any => {
+  const resolveImageUrls = (image: string | Record<string, string> | null): string | Record<string, string> | null => {
     if (!image) return image
 
     // If it's just a string path
@@ -46,7 +46,7 @@ export const useAssetUrl = () => {
     }
 
     // If it's an object with multiple image properties
-    const processed: any = { ...image }
+    const processed: Record<string, string> = { ...image as Record<string, string> }
 
     if (processed.desktop) processed.desktop = resolveAssetUrl(processed.desktop)
     if (processed.mobile) processed.mobile = resolveAssetUrl(processed.mobile)

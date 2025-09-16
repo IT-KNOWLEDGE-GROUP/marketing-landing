@@ -90,7 +90,7 @@ const createLandingSectionSchema = () => z.object({
 })
 
 export const collections = {
-  'landingContent': defineCollection({
+  landingContent: defineCollection({
     source: 'landing/*.yml',
     type: 'page',
     schema: z.object({

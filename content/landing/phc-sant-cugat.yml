@@ -70,6 +70,20 @@ sections:
   #   layout: 'text-only'
   #   background: 'white'
 
+
+  - type: 'horizontal'
+    class: 'horizontal-section'
+    title: "Per què Codelearn?"
+    content: 'Hem desenvolupat un univers de personatges ficticis i una sofisticada plataforma d’aprenentatge en línia per tal de motivar i engrescar els alumnes al llarg del seu procés d’aprenentatge.</br></br>A la nostra plataforma online els cursos es presenten com a aventures i els exercicis són reptes en què l’alumne assumeix el rol d’heroi, com si es tractés d’un joc o una aventura.</br></br>Codelearn, la teva escola de pensament computacional a Barcelona, Girona, Lleida, Tarragona i moltes altres poblacions de Catalunya!'
+    image:
+      src: '/images/landing-sant-cugat/codelearn2.webp'
+      alt: 'Logo academia codelearn'
+    layout: 'image-right'
+    background: 'gradient'
+
+#    background_image: '/images/landing-sant-cugat/reference/student-robot-banner.png'
+    #textAlign: 'right'
+
   # - type: 'vertical'
   #   class: 'cta-band-section'
   #   title: "\"La programació és una habilitat essencial per descobrir els secrets de l'univers o tenir èxit al segle XXI\" - Stephen Hawking"

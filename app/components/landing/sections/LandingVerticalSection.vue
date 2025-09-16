@@ -80,7 +80,7 @@ const backgroundImageStyle = computed(() => {
 
   // Force gray background for press sections via inline style
   if (props.class?.includes('press-section')) {
-    styles.backgroundColor = '#e5e7eb'  // Darker gray so you can clearly see it
+    styles.backgroundColor = '#e5e7eb' // Darker gray so you can clearly see it
     styles.background = '#e5e7eb'
   }
 
@@ -130,10 +130,16 @@ const combinedClass = computed(() => {
     <!-- Slot para título con HTML e imágenes -->
     <template #title>
       <h1 v-html="processedTitle" />
-      <p v-if="section.description" v-html="processedDescription" />
+      <p
+        v-if="section.description"
+        v-html="processedDescription"
+      />
 
       <!-- Imágenes responsive con caption inmediato -->
-      <div v-if="section.image" :class="imageContainerClass">
+      <div
+        v-if="section.image"
+        :class="imageContainerClass"
+      >
         <!-- Imagen Desktop -->
         <NuxtImg
           v-if="desktopImageSrc"
@@ -168,11 +174,13 @@ const combinedClass = computed(() => {
         />
 
         <!-- Caption opcional dentro del mismo contenedor -->
-        <p v-if="section.caption" class="caption">
+        <p
+          v-if="section.caption"
+          class="caption"
+        >
           <strong>{{ section.caption }}</strong>
         </p>
       </div>
     </template>
   </UPageSection>
 </template>
-

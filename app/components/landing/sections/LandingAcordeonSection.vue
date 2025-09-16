@@ -6,8 +6,14 @@
   >
     <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
       <!-- Title -->
-      <div class="text-center mb-12" v-if="section.title || section.subtitle || section.description">
-        <h3 v-if="section.subtitle" class="text-sm font-semibold text-primary uppercase tracking-wide mb-4">
+      <div
+        v-if="section.title || section.subtitle || section.description"
+        class="text-center mb-12"
+      >
+        <h3
+          v-if="section.subtitle"
+          class="text-sm font-semibold text-primary uppercase tracking-wide mb-4"
+        >
           {{ section.subtitle }}
         </h3>
         <h2
@@ -24,14 +30,21 @@
 
       <!-- Accordion -->
       <div class="max-w-4xl mx-auto">
-        <UAccordion :items="accordionItems" variant="outline" size="lg">
-          <template #default="{ item, index, open }">
+        <UAccordion
+          :items="accordionItems"
+          variant="outline"
+          size="lg"
+        >
+          <template #default="{ item, open }">
             <UButton
               :color="open ? 'primary' : 'gray'"
               variant="ghost"
               class="w-full p-6 text-left justify-between font-semibold text-base hover:bg-gray-50"
             >
-              <span class="text-left" v-html="item.label" />
+              <span
+                class="text-left"
+                v-html="item.label"
+              />
               <UIcon
                 :name="open ? 'i-lucide-minus' : 'i-lucide-plus'"
                 class="w-5 h-5 flex-shrink-0 ml-4"
@@ -77,7 +90,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const getSectionStyle = () => {
-  let styles: any = {}
+  const styles: Record<string, string> = {}
 
   if (props.section.background_image) {
     styles.backgroundImage = `url('${props.section.background_image}')`
@@ -93,7 +106,7 @@ const getSectionStyle = () => {
 const accordionItems = computed(() => {
   if (!props.section.items) return []
 
-  return props.section.items.map((item) => ({
+  return props.section.items.map(item => ({
     label: item.question,
     content: item.answer,
     defaultOpen: false

@@ -104,18 +104,32 @@ const combinedClass = computed(() => {
         <!-- Contenido de texto (izquierda) -->
         <div class="benefits-text-content">
           <!-- Título principal -->
-          <h2 v-html="processedTitle" class="benefits-main-title" />
+          <h2
+            class="benefits-main-title"
+            v-html="processedTitle"
+          />
 
           <!-- Subtítulo -->
-          <h3 v-if="section.subtitle" v-html="processedSubtitle" class="benefits-subtitle" />
+          <h3
+            v-if="section.subtitle"
+            class="benefits-subtitle"
+            v-html="processedSubtitle"
+          />
 
           <!-- Descripción adicional -->
-          <p v-if="section.description" v-html="processedDescription" class="benefits-description" />
+          <p
+            v-if="section.description"
+            class="benefits-description"
+            v-html="processedDescription"
+          />
         </div>
 
         <!-- Timeline de beneficios (derecha) -->
         <div class="benefits-timeline-container">
-          <UTimeline :items="timelineItems" :ui="timelineUI" />
+          <UTimeline
+            :items="timelineItems"
+            :ui="timelineUI"
+          />
         </div>
       </div>
     </template>

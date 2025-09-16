@@ -3,14 +3,14 @@
 interface Section {
   type: 'vertical' | 'horizontal' | 'icon-enum' | 'contact' | 'acordeon' | 'footer'
   class?: string
-  [key: string]: any
+  [key: string]: unknown
 }
 
 interface Props {
   sections: Section[]
 }
 
-const props = defineProps<Props>()
+const _props = defineProps<Props>()
 
 // Mapeo directo de tipos a componentes
 const componentMap = {
@@ -42,9 +42,9 @@ const getSectionClass = (section: Section) => {
   <div>
     <!-- Secciones dinámicas -->
     <component
+      :is="componentMap[section.type]"
       v-for="(section, index) in sections"
       :key="index"
-      :is="componentMap[section.type]"
       v-bind="getSectionProps(section)"
       :class="getSectionClass(section)"
     />

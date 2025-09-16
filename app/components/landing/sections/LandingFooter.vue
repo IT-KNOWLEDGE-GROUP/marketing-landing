@@ -4,28 +4,40 @@
       <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-8">
         <!-- Address -->
         <a
+          v-if="footer.address"
           href="https://maps.app.goo.gl/fhhsF38j2VsMZ3YR8"
           target="_blank"
           class="flex items-center gap-2 hover:opacity-80 transition-opacity"
-          v-if="footer.address"
         >
-          <UIcon name="i-lucide-map-pin" class="w-5 h-5 flex-shrink-0" />
+          <UIcon
+            name="i-lucide-map-pin"
+            class="w-5 h-5 flex-shrink-0"
+          />
           <span class="text-sm font-medium">{{ footer.address }}</span>
         </a>
 
         <!-- Phone -->
         <a
+          v-if="footer.phone"
           :href="`tel:${footer.phone}`"
           class="flex items-center gap-2 hover:opacity-80 transition-opacity"
-          v-if="footer.phone"
         >
-          <UIcon name="i-lucide-phone" class="w-5 h-5 flex-shrink-0" />
+          <UIcon
+            name="i-lucide-phone"
+            class="w-5 h-5 flex-shrink-0"
+          />
           <span class="text-sm font-medium">Tlf. {{ footer.phone }}</span>
         </a>
 
         <!-- Email -->
-        <div class="flex items-center gap-2" v-if="footer.email">
-          <UIcon name="i-lucide-mail" class="w-5 h-5 flex-shrink-0" />
+        <div
+          v-if="footer.email"
+          class="flex items-center gap-2"
+        >
+          <UIcon
+            name="i-lucide-mail"
+            class="w-5 h-5 flex-shrink-0"
+          />
           <span class="text-sm font-medium">{{ footer.email }}</span>
         </div>
       </div>
@@ -44,7 +56,7 @@ interface Props {
   footer: FooterData
 }
 
-const props = defineProps<Props>()
+const _props = defineProps<Props>()
 </script>
 
 <style scoped>

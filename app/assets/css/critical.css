@@ -1,0 +1,71 @@
+/* Critical CSS - Above the fold styles only */
+:root {
+  --primary-green: #8BE63A;
+  --text-dark: #1f2937;
+  --text-gray: #4b5563;
+  --hero-text-light: #d1d5db;
+  --font-size-title: 2.5rem;
+  --line-height-tight: 1.2;
+  --section-padding: 4rem 2rem;
+}
+
+/* Hero Section Critical Styles */
+.hero-section {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  text-align: center;
+  padding: 2rem 0 0 0 !important;
+  position: relative;
+}
+
+.hero-section h1 {
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  color: white !important;
+  margin: 0rem 15rem 1.5rem 15rem !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+}
+
+.hero-section h1 strong {
+  color: #8BE63A !important;
+  font-weight: bold !important;
+}
+
+.hero-section p {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #ffffff !important;
+  line-height: 1.6;
+  margin: 0rem 17rem 2.5rem 17rem;
+}
+
+/* Header Critical Styles */
+.bg-white {
+  background-color: white !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 1.75rem !important;
+    margin: 0 auto 1.5rem auto !important;
+    padding: 0 1rem !important;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+    margin: 0 1rem 2.5rem 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section h1 {
+    font-size: 3rem !important;
+  }
+}

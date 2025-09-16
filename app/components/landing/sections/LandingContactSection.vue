@@ -46,7 +46,7 @@ const isSubmitting = ref(false)
 // Inicializar form data con campos vacíos
 onMounted(() => {
   const initialData: Record<string, any> = {}
-  props.contact.fields.forEach(field => {
+  props.contact.fields.forEach((field) => {
     initialData[field.name] = field.type === 'number' ? null : ''
   })
   formData.value = initialData
@@ -68,14 +68,14 @@ const submitForm = async () => {
     if (props.contact.webhook_url) {
       // Map form data using the 'field' names for webhook
       const webhookData: Record<string, any> = {}
-      props.contact.fields.forEach(field => {
+      props.contact.fields.forEach((field) => {
         webhookData[field.field] = formData.value[field.name]
       })
 
       const response = await fetch(props.contact.webhook_url, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(webhookData)
       })
@@ -87,7 +87,7 @@ const submitForm = async () => {
 
         // Reset form
         const initialData: Record<string, any> = {}
-        props.contact.fields.forEach(field => {
+        props.contact.fields.forEach((field) => {
           initialData[field.name] = field.type === 'number' ? null : ''
         })
         formData.value = initialData
@@ -123,14 +123,22 @@ const sectionUI = computed(() => ({
       <div class="contact-section-container">
         <!-- Título -->
         <div class="contact-header">
-          <h2 class="contact-title">{{ contact.title }}</h2>
+          <h2 class="contact-title">
+            {{ contact.title }}
+          </h2>
         </div>
 
         <!-- Formulario centrado -->
         <div class="contact-form-container">
-          <form @submit.prevent="submitForm" class="contact-form">
+          <form
+            class="contact-form"
+            @submit.prevent="submitForm"
+          >
             <!-- Renderizar campos dinámicamente -->
-            <template v-for="field in contact.fields" :key="field.name">
+            <template
+              v-for="field in contact.fields"
+              :key="field.name"
+            >
               <!-- Textarea para campos de tipo textarea -->
               <UTextarea
                 v-if="field.type === 'textarea'"
@@ -175,4 +183,3 @@ const sectionUI = computed(() => ({
     </template>
   </UPageSection>
 </template>
-

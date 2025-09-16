@@ -16,11 +16,11 @@ const { data: content } = await useAsyncData(`landing-content-${slug}`, async ()
   }
 
   // Find the content that matches our slug
-  const matchedContent = allContent.find((item: any) =>
-    item.stem === slug ||
-    item.stem === `landing/${slug}` ||
-    item._source === `${slug}.yml` ||
-    item._source === `landing/${slug}.yml`
+  const matchedContent = allContent.find((item: { stem?: string, _source?: string }) =>
+    item.stem === slug
+    || item.stem === `landing/${slug}`
+    || item._source === `${slug}.yml`
+    || item._source === `landing/${slug}.yml`
   )
 
   return matchedContent || null
@@ -34,7 +34,6 @@ if (!content.value) {
   })
 }
 </script>
-
 
 <template>
   <div>
