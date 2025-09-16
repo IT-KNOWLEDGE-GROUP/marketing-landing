@@ -29,6 +29,7 @@ interface ContactSectionData {
   contact_info?: ContactInfo
   id?: string
   webhook_url?: string
+  class?: string
 }
 
 interface Props {
@@ -40,21 +41,17 @@ interface Props {
 const props = defineProps<Props>()
 
 // Estado del formulario
-const formData = ref({})
+const formData = ref<Record<string, string | number | null>>({})
 const isSubmitting = ref(false)
 
 // Inicializar form data con campos vacíos
 onMounted(() => {
-  const initialData: Record<string, any> = {}
+  const initialData: Record<string, string | number | null> = {}
   props.contact.fields.forEach((field) => {
     initialData[field.name] = field.type === 'number' ? null : ''
   })
   formData.value = initialData
 })
-
-const getFieldLabel = (field: ContactField) => {
-  return field.label
-}
 
 const getFieldPlaceholder = (field: ContactField) => {
   return field.placeholder || field.label
@@ -67,7 +64,7 @@ const submitForm = async () => {
   try {
     if (props.contact.webhook_url) {
       // Map form data using the 'field' names for webhook
-      const webhookData: Record<string, any> = {}
+      const webhookData: Record<string, string | number> = {}
       props.contact.fields.forEach((field) => {
         webhookData[field.field] = formData.value[field.name]
       })
@@ -86,7 +83,7 @@ const submitForm = async () => {
         alert('Formulari enviat correctament! Ens posarem en contacte aviat.')
 
         // Reset form
-        const initialData: Record<string, any> = {}
+        const initialData: Record<string, string | number | null> = {}
         props.contact.fields.forEach((field) => {
           initialData[field.name] = field.type === 'number' ? null : ''
         })
@@ -117,7 +114,7 @@ const sectionUI = computed(() => ({
   <UPageSection
     :id="contact.id"
     :ui="sectionUI"
-    :class="class"
+    :class="contact.class"
   >
     <template #title>
       <div class="contact-section-container">
@@ -142,7 +139,7 @@ const sectionUI = computed(() => ({
               <!-- Textarea para campos de tipo textarea -->
               <UTextarea
                 v-if="field.type === 'textarea'"
-                v-model="formData[field.name]"
+                v-model="(formData as any)[field.name]"
                 :placeholder="getFieldPlaceholder(field)"
                 :required="field.required"
                 class="form-textarea"
@@ -153,13 +150,13 @@ const sectionUI = computed(() => ({
               <!-- Input para otros tipos de campo -->
               <UInput
                 v-else
-                v-model="formData[field.name]"
+                v-model="(formData as any)[field.name]"
                 :type="field.type"
                 :placeholder="getFieldPlaceholder(field)"
                 :required="field.required"
                 :min="field.min"
                 :max="field.max"
-                :class="field.type === 'textarea' ? 'form-textarea' : 'form-input'"
+                class="form-input"
                 size="lg"
                 variant="outline"
               />

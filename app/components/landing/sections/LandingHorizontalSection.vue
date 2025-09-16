@@ -24,6 +24,7 @@ interface HorizontalSectionData {
   buttons?: HorizontalButton[]
   layout?: 'image-left' | 'image-right'
   background?: 'white' | 'gray' | 'dark' | 'gradient'
+  class?: string
 }
 
 interface Props {
@@ -79,7 +80,7 @@ const imageSrc = computed(() =>
 <template>
   <UPageSection
     :ui="sectionUI"
-    :class="class"
+    :class="section.class"
   >
     <template #title>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
